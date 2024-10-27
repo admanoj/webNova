@@ -7,6 +7,9 @@ import Card from "./card/page";
 import { BackgroundBoxesDemo } from "./background/page";
 import AboutUs from "./aboutUs/page";
 
+import { SparklesPreview } from "./sparkles/page";
+import Teams from "./team/page";
+
 const Layout = () => {
   return (
     <div>
@@ -16,6 +19,9 @@ const Layout = () => {
       <Card />
       <BackgroundBoxesDemo />
       <AboutUs />
+
+      <SparklesPreview />
+      <Teams />
     </div>
   );
 };
