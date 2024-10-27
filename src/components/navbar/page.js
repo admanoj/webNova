@@ -36,7 +36,10 @@ const Navbar = () => {
         {isMounted && (
           <>
             {/* Home Link */}
-            <Link href="#" className="text-xl hover:text-blue-700 font-bold">
+            <Link
+              href="#"
+              className="text-xl hover:text-purple-400 font-bold text-purple-700"
+            >
               Home
             </Link>
 
@@ -46,26 +49,29 @@ const Navbar = () => {
               onMouseEnter={() => showDropdown("about")}
               onMouseLeave={hideDropdown}
             >
-              <Link href="#" className="text-xl hover:text-blue-700 font-bold">
+              <Link
+                href="#"
+                className="text-xl hover:text-purple-400 font-bold text-purple-700"
+              >
                 About Us
               </Link>
               {openDropdown === "about" && ( // Check if this dropdown is open
                 <div className="absolute left-0 top-full mt-2 w-48 bg-white shadow-md rounded-md z-20">
                   <Link
                     href="#"
-                    className="block px-4 py-2 text-gray-700 hover:bg-gray-200 hover:text-blue-700 "
+                    className="block px-4 py-2  hover:bg-gray-200 hover:text-purple-400 text-purple-700"
                   >
                     How We Work
                   </Link>
                   <Link
                     href="#"
-                    className="block px-4 py-2 text-gray-700 hover:bg-gray-200 hover:text-blue-700"
+                    className="block px-4 py-2 text-purple-700 hover:bg-gray-200 hover:text-purple-400"
                   >
                     Testimonial
                   </Link>
                   <Link
                     href="#"
-                    className="block px-4 py-2 text-gray-700 hover:bg-gray-200 hover:text-blue-700"
+                    className="block px-4 py-2 text-purple-700 hover:bg-gray-200 hover:text-purple-400"
                   >
                     FAQs
                   </Link>
@@ -79,32 +85,35 @@ const Navbar = () => {
               onMouseEnter={() => showDropdown("projects")}
               onMouseLeave={hideDropdown}
             >
-              <Link href="#" className="text-xl hover:text-blue-700 font-bold">
+              <Link
+                href="#"
+                className="text-xl hover:text-purple-400 font-bold text-purple-700"
+              >
                 Find Projects
               </Link>
               {openDropdown === "projects" && ( // Check if this dropdown is open
                 <div className="absolute left-0 top-full mt-2 w-48 bg-white shadow-md rounded-md z-20">
                   <Link
                     href="#"
-                    className="block px-4 py-2 text-gray-700 hover:bg-gray-200 hover:text-blue-700"
+                    className="block px-4 py-2 text-purple-700 hover:bg-gray-200 hover:text-purple-700"
                   >
                     Save Project
                   </Link>
                   <Link
                     href="#"
-                    className="block px-4 py-2 text-gray-700 hover:bg-gray-200 hover:text-blue-700"
+                    className="block px-4 py-2 text-purple-700 hover:bg-gray-200 hover:text-purple-700"
                   >
                     Proposals
                   </Link>
                   <Link
                     href="#"
-                    className="block px-4 py-2 text-gray-700 hover:bg-gray-200 hover:text-blue-700"
+                    className="block px-4 py-2 text-purple-700 hover:bg-gray-200 hover:text-purple-700"
                   >
                     Offers
                   </Link>
                   <Link
                     href="#"
-                    className="block px-4 py-2 text-gray-700 hover:bg-gray-200 hover:text-blue-700"
+                    className="block px-4 py-2 text-purple-700 hover:bg-gray-200 hover:text-purple-700 "
                   >
                     HomePage
                   </Link>
@@ -118,32 +127,35 @@ const Navbar = () => {
               onMouseEnter={() => showDropdown("team")}
               onMouseLeave={hideDropdown}
             >
-              <Link href="#" className="text-xl hover:text-blue-700 font-bold">
+              <Link
+                href="#"
+                className="text-xl hover:text-purple-400 font-bold text-purple-700"
+              >
                 Join Our Team
               </Link>
               {openDropdown === "team" && ( // Check if this dropdown is open
                 <div className="absolute left-0 top-full mt-2 w-48 bg-white shadow-md rounded-md z-20">
                   <Link
                     href="#"
-                    className="block px-4 py-2 text-gray-700 hover:bg-gray-200 hover:text-blue-700"
+                    className="block px-4 py-2 text-purple-700 hover:bg-gray-200 hover:text-purple-700"
                   >
                     Application Process
                   </Link>
                   <Link
                     href="#"
-                    className="block px-4 py-2 text-gray-700 hover:bg-gray-200 hover:text-blue-700"
+                    className="block px-4 py-2 text-purple-700 hover:bg-gray-200 hover:text-purple-700"
                   >
                     Benefits
                   </Link>
                   <Link
                     href="#"
-                    className="block px-4 py-2 text-gray-700 hover:bg-gray-200 hover:text-blue-700"
+                    className="block px-4 py-2 text-purple-700 hover:bg-gray-200 hover:text-purple-700"
                   >
                     Culture
                   </Link>
                   <Link
                     href="#"
-                    className="block px-4 py-2 text-gray-700 hover:bg-gray-200 hover:text-blue-700"
+                    className="block px-4 py-2 text-purple-700 hover:bg-gray-200 hover:text-purple-700"
                   >
                     Open Positions
                   </Link>
@@ -157,32 +169,35 @@ const Navbar = () => {
               onMouseEnter={() => showDropdown("resources")}
               onMouseLeave={hideDropdown}
             >
-              <Link href="#" className="text-xl hover:text-blue-700 font-bold">
+              <Link
+                href="#"
+                className="text-xl hover:text-purple-400 font-bold text-purple-700"
+              >
                 Resources
               </Link>
               {openDropdown === "resources" && ( // Check if this dropdown is open
                 <div className="absolute left-0 top-full mt-2 w-48 bg-white shadow-md rounded-md z-20">
                   <Link
                     href="#"
-                    className="block px-4 py-2 text-gray-700 hover:bg-gray-200 hover:text-blue-700"
+                    className="block px-4 py-2 text-purple-700 hover:bg-gray-200 hover:text-purple-700"
                   >
                     See All
                   </Link>
                   <Link
                     href="#"
-                    className="block px-4 py-2 text-gray-700 hover:bg-gray-200 hover:text-blue-700"
+                    className="block px-4 py-2 text-purple-700 hover:bg-gray-200 hover:text-purple-700"
                   >
                     Articles
                   </Link>
                   <Link
                     href="#"
-                    className="block px-4 py-2 text-gray-700 hover:bg-gray-200 hover:text-blue-700"
+                    className="block px-4 py-2 text-purple-700 hover:bg-gray-200 hover:text-purple-700"
                   >
                     Resources
                   </Link>
                   <Link
                     href="#"
-                    className="block px-4 py-2 text-gray-700 hover:bg-gray-200 hover:text-blue-700"
+                    className="block px-4 py-2 text-purple-700 hover:bg-gray-200 hover:text-purple-700"
                   >
                     Use Cases
                   </Link>
