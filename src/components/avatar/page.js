@@ -1,13 +1,12 @@
-"use client";
-import { Avatar, AvatarIcon } from "@nextui-org/react";
+import * as React from "react";
+import Avatar from "@mui/material/Avatar";
+import Stack from "@mui/material/Stack";
 
 export default function App() {
   return (
-    <div className="flex items-center">
-      <Avatar
-        icon={<AvatarIcon className="text-black/80 w-6 h-6" />} // Icon-specific styling
-        className="bg-purple-500 h-10 w-10 rounded-full flex items-center justify-center"
-      />
-    </div>
+    <Stack direction="row" spacing={2}>
+      {/* Using the sx prop to set a custom background color */}
+      <Avatar sx={{ bgcolor: "purple" }} src="/broken-image.jpg" />
+    </Stack>
   );
 }
