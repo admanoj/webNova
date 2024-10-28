@@ -63,7 +63,7 @@ const App = () => (
         width: 240,
       }}
       cover={
-        <div className="h-[300px] overflow-hidden">
+        <div className="h-[296px] overflow-hidden">
           <img
             alt="example"
             src="/rajnish.jpg"
