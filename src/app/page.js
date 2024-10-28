@@ -11,6 +11,7 @@ import { SparklesPreview } from "./sparkles/page";
 import Teams from "./team/page";
 import Contact from "./contact/page";
 import Footer from "./footer/page";
+import Brand from "./brand/page";
 
 const Layout = () => {
   return (
@@ -24,6 +25,7 @@ const Layout = () => {
 
       <SparklesPreview />
       <Teams />
+      <Brand />
       <Contact />
       <Footer />
     </div>
