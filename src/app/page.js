@@ -12,6 +12,7 @@ import Teams from "./team/page";
 import Contact from "./contact/page";
 import Footer from "./footer/page";
 import Brand from "./brand/page";
+import Role from "./role/page";
 
 const Layout = () => {
   return (
@@ -24,6 +25,7 @@ const Layout = () => {
       <AboutUs />
 
       <SparklesPreview />
+      <Role />
       <Teams />
       <Brand />
       <Contact />
