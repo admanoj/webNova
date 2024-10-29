@@ -24,7 +24,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="bg-[#EFF0F4] rounded-full shadow-md p-4 flex items-center justify-between mt-8 h-24 ml-24 mr-24 relative sticky top-0 z-30">
+    <div className="bg-[#EFF0F4] rounded-full shadow-md p-4 flex items-center justify-between mt-4 h-24 ml-24 mr-24 sticky top-0 z-30 ">
       <div>
         <img
           src="web.svg"

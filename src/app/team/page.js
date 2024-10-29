@@ -8,8 +8,8 @@ const Teams = () => {
         Meet Our Leadership
       </h2>
       <p className="text-lg text-gray-600 whitespace-nowrap g-purple-100b ">
-        It's important to have exceptional customer service that builds strong
-        connections and trust with our clients.
+        It&apos;s important to have exceptional customer service that builds
+        strong connections and trust with our clients.
       </p>
       <App />
     </div>
