@@ -15,7 +15,7 @@ export default function Component() {
             <Image
               src="/support.jpg"
               alt="Administrative Support"
-              layout="fill"
+              fill
               objectFit="cover"
               className="transition-all duration-500 hover:scale-110 rounded-t-lg"
             />
@@ -47,7 +47,7 @@ export default function Component() {
             <Image
               src="/Business.jpg"
               alt="Administrative Support"
-              layout="fill"
+              fill
               objectFit="cover"
               className="transition-all duration-500 hover:scale-110 rounded-t-lg"
             />
@@ -79,7 +79,7 @@ export default function Component() {
             <Image
               src="/customer.jpg"
               alt="Administrative Support"
-              layout="fill"
+              fill
               objectFit="cover"
               className="transition-all duration-500 hover:scale-110 rounded-t-lg"
             />
@@ -113,7 +113,7 @@ export default function Component() {
             <Image
               src="/Finance.jpg"
               alt="Administrative Support"
-              layout="fill"
+              fill
               objectFit="cover"
               className="transition-all duration-500 hover:scale-110 rounded-t-lg"
             />

@@ -34,6 +34,8 @@
 // );
 // export default App;
 
+"use client";
+
 import React from "react";
 import { Card } from "antd";
 const { Meta } = Card;
@@ -67,6 +69,7 @@ const App = () => (
           <img
             alt="example"
             src="/rajnish.jpg"
+            fill
             className="object-cover w-full h-full"
           />
         </div>
