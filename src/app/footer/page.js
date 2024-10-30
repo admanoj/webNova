@@ -99,6 +99,7 @@
 // };
 
 // export default Footer;
+"use client";
 
 import React from "react";
 import Image from "next/image"; // Importing Image from Next.js
@@ -129,25 +130,25 @@ const Footer = () => {
           <h3 className="text-3xl font-medium">Website</h3>
           <a
             href="#home"
-            className="hover:text-purple-600 text-xl transition duration-700 ease-in-out"
+            className="hover:text-purple-600 text-xl transition duration-700 ease-in-out font-sans"
           >
             Home
           </a>
           <a
             href="#about"
-            className="hover:text-purple-600 text-xl transition duration-700 ease-in-out"
+            className="hover:text-purple-600 text-xl transition duration-700 ease-in-out font-sans"
           >
             About
           </a>
           <a
             href="#services"
-            className="hover:text-purple-600 text-xl transition duration-700 ease-in-out"
+            className="hover:text-purple-600 text-xl transition duration-700 ease-in-out font-sans"
           >
             Our Services
           </a>
           <a
             href="#blogs"
-            className="hover:text-purple-600 text-xl transition duration-700 ease-in-out"
+            className="hover:text-purple-600 text-xl transition duration-700 ease-in-out font-sans"
           >
             Blogs
           </a>
@@ -156,14 +157,14 @@ const Footer = () => {
         {/* Right Side: Contact Information */}
         <div className="text-right">
           <h3 className="text-3xl font-medium">Contact Us</h3>
-          <p className="hover:text-purple-600 text-xl transition duration-700 ease-in-out">
-            Bhaisepati, Lalitpur
+          <p className="hover:text-purple-600 text-xl transition duration-700 ease-in-out font-sans">
+            Sacramento, California
           </p>
-          <p className="hover:text-purple-600 text-xl transition duration-700 ease-in-out">
-            Email: admanoj111@gmail.com
+          <p className="hover:text-purple-600 text-xl transition duration-700 ease-in-out font-sans">
+            bhattaishan7@gmail.com
           </p>
-          <p className="hover:text-purple-600 text-xl transition duration-700 ease-in-out">
-            Phone: 9861439271
+          <p className="hover:text-purple-600 text-xl transition duration-700 ease-in-out font-sans">
+            +1 (562) 310-1189
           </p>
         </div>
       </div>

@@ -77,7 +77,7 @@ export default function Component() {
         <Card className="w-full max-w-md m-4 rounded-lg overflow-hidden shadow-lg transform transition-transform duration-300 hover:scale-105 bg-gradient-to-br from-purple-50 to-indigo-50">
           <div className="relative h-48 w-full">
             <Image
-              src="/Customer.jpg"
+              src="/cus.jpg"
               alt="Administrative Support"
               fill
               objectFit="cover"
@@ -111,7 +111,7 @@ export default function Component() {
         <Card className="w-full max-w-md m-4 rounded-lg overflow-hidden shadow-lg transform transition-transform duration-300 hover:scale-105 bg-gradient-to-br from-purple-50 to-indigo-50">
           <div className="relative h-48 w-full">
             <Image
-              src="/Finance.jpg"
+              src="/fin.jpg"
               alt="Administrative Support"
               fill
               objectFit="cover"

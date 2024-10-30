@@ -29,6 +29,7 @@
 // };
 
 // export default Contact;
+"use client";
 
 import React from "react";
 import Image from "next/image"; // Import Image from next/image
@@ -46,7 +47,7 @@ const Contact = () => {
 
         <div>
           <span className="text-6xl text-[#1E1F3A] font-sans font-light">
-            admanoj111@gmail.com
+            bhattaishan7@gmail.com
           </span>
         </div>
       </div>
