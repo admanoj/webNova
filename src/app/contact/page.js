@@ -29,15 +29,54 @@
 // };
 
 // export default Contact;
+// "use client";
+
+// import React from "react";
+// import Image from "next/image"; // Import Image from next/image
+
+// const Contact = () => {
+//   return (
+//     <div className="flex justify-between items-center m-4 ml-20 h-[300px]">
+//       <div className="flex flex-col justify-center space-y-6">
+//         <div>
+//           <h2 className="text-lg text-[#1E1F3A]">Contact Us</h2>
+//           <h2 className="text-lg text-[#1E1F3A]">
+//             Let&apos;s see what we can create together
+//           </h2>
+//         </div>
+
+//         <div>
+//           <span className="text-6xl text-[#1E1F3A] font-sans font-light">
+//             bhattaishan7@gmail.com
+//           </span>
+//         </div>
+//       </div>
+//       <div className="flex items-center h-full relative w-1/2">
+//         {" "}
+//         {/* Specify width */}
+//         <Image
+//           src="/html.svg"
+//           alt="HTML Icon"
+//           layout="fill" // Allow the image to fill the container
+//           objectFit="contain" // Maintain the aspect ratio and fit in the container
+//           className="ml-auto" // Optional: if you want to add margin left to the image
+//         />
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Contact;
+
 "use client";
 
 import React from "react";
-import Image from "next/image"; // Import Image from next/image
+import Image from "next/image";
 
 const Contact = () => {
   return (
-    <div className="flex justify-between items-center m-4 ml-20 h-[300px]">
-      <div className="flex flex-col justify-center space-y-6">
+    <div className="flex flex-col md:flex-row justify-between items-center m-4 md:ml-20 h-auto md:h-[300px]">
+      <div className="flex flex-col justify-center space-y-6 md:w-1/2">
         <div>
           <h2 className="text-lg text-[#1E1F3A]">Contact Us</h2>
           <h2 className="text-lg text-[#1E1F3A]">
@@ -46,19 +85,17 @@ const Contact = () => {
         </div>
 
         <div>
-          <span className="text-6xl text-[#1E1F3A] font-sans font-light">
+          <span className="text-4xl md:text-6xl text-[#1E1F3A] font-sans font-light">
             bhattaishan7@gmail.com
           </span>
         </div>
       </div>
-      <div className="flex items-center h-full relative w-1/2">
-        {" "}
-        {/* Specify width */}
+      <div className="flex items-center h-full relative w-full md:w-1/2">
         <Image
           src="/html.svg"
           alt="HTML Icon"
-          layout="fill" // Allow the image to fill the container
-          objectFit="contain" // Maintain the aspect ratio and fit in the container
+          layout="fill"
+          objectFit="contain"
           className="ml-auto" // Optional: if you want to add margin left to the image
         />
       </div>

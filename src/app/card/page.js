@@ -54,6 +54,92 @@
 
 // export default Card;
 
+// "use client";
+// import React from "react";
+
+// const Card = () => {
+//   return (
+//     <div className="mt-5 min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 p-8 md:p-12 overflow-hidden relative">
+//       {/* Background Decorative Elements */}
+//       <div className="absolute top-0 right-0 w-96 h-96 bg-purple-200 rounded-full filter blur-3xl opacity-40 animate-blob" />
+//       <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-200 rounded-full filter blur-3xl opacity-40 animate-blob animation-delay-2000" />
+
+//       <div className="flex flex-col-reverse md:flex-row items-center justify-between max-w-6xl mx-auto relative z-10 space-y-10 md:space-y-0">
+//         {/* Card Content Section */}
+//         <div className="w-full md:w-1/2 text-center md:text-left">
+//           <div className="max-w-lg bg-white bg-opacity-80 backdrop-blur-lg rounded-3xl shadow-2xl p-6 md:p-8 border border-purple-100 space-y-6">
+//             <span className="inline-block px-4 py-2 bg-purple-200 text-purple-800 text-sm font-semibold rounded-full shadow">
+//               Welcome to the Future
+//             </span>
+
+//             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight bg-gradient-to-r from-purple-700 to-indigo-700 bg-clip-text text-transparentG">
+//               Best Software, Web
+//               <br />
+//               Development & IT
+//               <br />
+//               Company
+//             </h1>
+//             <p className="text-gray-500 text-2xl font-sans">
+//               in Sacramento, California
+//             </p>
+
+//             <h2 className="text-lg text-gray-700 ">
+//               We are the Best
+//               <span className="block text-purple-600 font-semibold mt-1 font-sans">
+//                 Digital Service Provider
+//               </span>
+//               in Sacramento, California.
+//             </h2>
+
+//             <div className="flex flex-col md:flex-row justify-center md:justify-start space-y-3 md:space-y-0 md:space-x-3 pt-4">
+//               <button className="transform transition-transform duration-300 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-semibold py-2 px-6 rounded-lg shadow-md hover:shadow-lg hover:scale-105">
+//                 Get in Touch
+//               </button>
+//               <button className="transform transition-transform duration-300 border-2 border-purple-600 text-purple-600 font-semibold py-2 px-6 rounded-lg hover:bg-purple-50 hover:scale-105">
+//                 Learn More
+//               </button>
+//             </div>
+
+//             {/* Stats Section */}
+//             <div className="grid grid-cols-3 gap-4 pt-4 border-t border-purple-100">
+//               <div className="text-center">
+//                 <div className="text-xl font-bold text-purple-600">150+</div>
+//                 <div className="text-xs text-gray-600">Projects</div>
+//               </div>
+//               <div className="text-center">
+//                 <div className="text-xl font-bold text-purple-600">50+</div>
+//                 <div className="text-xs text-gray-600">Happy Clients</div>
+//               </div>
+//               <div className="text-center">
+//                 <div className="text-xl font-bold text-purple-600">15+</div>
+//                 <div className="text-xs text-gray-600">Team Members</div>
+//               </div>
+//             </div>
+//           </div>
+//         </div>
+
+//         {/* Image Section with Decorative Circles */}
+//         <div className="w-full md:w-1/2 flex justify-center md:justify-end relative">
+//           <div className="relative w-full max-w-lg">
+//             {/* Animated Circles */}
+//             <div className="absolute top-0 -left-8 w-80 h-80 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-bounce" />
+//             <div className="absolute top-0 -right-8 w-80 h-80 bg-indigo-400 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-bounce delay-2000" />
+//             <div className="absolute -bottom-10 left-24 w-80 h-80 bg-pink-400 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-bounce delay-4000" />
+
+//             <img
+//               src="/code.svg"
+//               alt="Coding illustration"
+//               className="relative w-full h-auto object-contain transform transition-transform duration-500 hover:scale-105"
+//             />
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Card;
+
 "use client";
 import React from "react";
 
@@ -64,7 +150,7 @@ const Card = () => {
       <div className="absolute top-0 right-0 w-96 h-96 bg-purple-200 rounded-full filter blur-3xl opacity-40 animate-blob" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-200 rounded-full filter blur-3xl opacity-40 animate-blob animation-delay-2000" />
 
-      <div className="flex flex-col-reverse md:flex-row items-center justify-between max-w-6xl mx-auto relative z-10 space-y-10 md:space-y-0">
+      <div className="flex flex-col md:flex-row items-center justify-between max-w-6xl mx-auto relative z-10 space-y-10 md:space-y-0">
         {/* Card Content Section */}
         <div className="w-full md:w-1/2 text-center md:text-left">
           <div className="max-w-lg bg-white bg-opacity-80 backdrop-blur-lg rounded-3xl shadow-2xl p-6 md:p-8 border border-purple-100 space-y-6">
@@ -72,7 +158,7 @@ const Card = () => {
               Welcome to the Future
             </span>
 
-            <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight bg-gradient-to-r from-purple-700 to-indigo-700 bg-clip-text text-transparentG">
+            <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight bg-gradient-to-r from-purple-700 to-indigo-700 bg-clip-text text-transparent">
               Best Software, Web
               <br />
               Development & IT
@@ -101,16 +187,16 @@ const Card = () => {
             </div>
 
             {/* Stats Section */}
-            <div className="grid grid-cols-3 gap-4 pt-4 border-t border-purple-100">
-              <div className="text-center">
+            <div className="grid grid-cols-3 gap-4 pt-4 border-t border-purple-100 text-center">
+              <div>
                 <div className="text-xl font-bold text-purple-600">150+</div>
                 <div className="text-xs text-gray-600">Projects</div>
               </div>
-              <div className="text-center">
+              <div>
                 <div className="text-xl font-bold text-purple-600">50+</div>
                 <div className="text-xs text-gray-600">Happy Clients</div>
               </div>
-              <div className="text-center">
+              <div>
                 <div className="text-xl font-bold text-purple-600">15+</div>
                 <div className="text-xs text-gray-600">Team Members</div>
               </div>
