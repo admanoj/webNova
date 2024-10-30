@@ -16,7 +16,7 @@ export default function Component() {
               src="/support.jpg"
               alt="Administrative Support"
               fill
-              objectFit="cover"
+              style={{ objectFit: "cover" }}
               className="transition-all duration-500 hover:scale-110 rounded-t-lg"
             />
           </div>
@@ -34,7 +34,6 @@ export default function Component() {
                 QA-related tasks, making your production life a whole lot easier
               </p>
             </div>
-            {/* Centered Button */}
             <div className="flex justify-center">
               <Button className="m-7 py-3 text-lg rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold transition-all duration-300 hover:from-indigo-600 hover:to-purple-600 hover:shadow-lg">
                 Explore Now
@@ -42,13 +41,14 @@ export default function Component() {
             </div>
           </CardContent>
         </Card>
+
         <Card className="w-full max-w-md m-4 rounded-lg overflow-hidden shadow-lg transform transition-transform duration-300 hover:scale-105 bg-gradient-to-br from-purple-50 to-indigo-50">
           <div className="relative h-48 w-full">
             <Image
               src="/Business.jpg"
-              alt="Administrative Support"
+              alt="Business Intelligence"
               fill
-              objectFit="cover"
+              style={{ objectFit: "cover" }}
               className="transition-all duration-500 hover:scale-110 rounded-t-lg"
             />
           </div>
@@ -66,7 +66,6 @@ export default function Component() {
                 tasks, making your production life a whole lot easier
               </p>
             </div>
-            {/* Centered Button */}
             <div className="flex justify-center">
               <Button className="m-6 py-3 text-lg rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold transition-all duration-300 hover:from-indigo-600 hover:to-purple-600 hover:shadow-lg">
                 Explore Now
@@ -74,13 +73,14 @@ export default function Component() {
             </div>
           </CardContent>
         </Card>
+
         <Card className="w-full max-w-md m-4 rounded-lg overflow-hidden shadow-lg transform transition-transform duration-300 hover:scale-105 bg-gradient-to-br from-purple-50 to-indigo-50">
           <div className="relative h-48 w-full">
             <Image
               src="/cus.jpg"
-              alt="Administrative Support"
+              alt="Customer Service"
               fill
-              objectFit="cover"
+              style={{ objectFit: "cover" }}
               className="transition-all duration-500 hover:scale-110 rounded-t-lg"
             />
           </div>
@@ -99,7 +99,6 @@ export default function Component() {
                 workload lighter.
               </p>
             </div>
-            {/* Centered Button */}
             <div className="flex justify-center ">
               <Button className="m-6 py-3 text-lg rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold transition-all duration-300 hover:from-indigo-600 hover:to-purple-600 hover:shadow-lg">
                 Explore Now
@@ -112,9 +111,9 @@ export default function Component() {
           <div className="relative h-48 w-full">
             <Image
               src="/fin.jpg"
-              alt="Administrative Support"
+              alt="Finance"
               fill
-              objectFit="cover"
+              style={{ objectFit: "cover" }}
               className="transition-all duration-500 hover:scale-110 rounded-t-lg"
             />
           </div>
@@ -134,7 +133,6 @@ export default function Component() {
                 business run more smoothly and efficiently.
               </p>
             </div>
-            {/* Centered Button */}
             <div className="flex justify-center">
               <Button className="py-3 text-lg rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold transition-all duration-300 hover:from-indigo-600 hover:to-purple-600 hover:shadow-lg">
                 Explore Now
