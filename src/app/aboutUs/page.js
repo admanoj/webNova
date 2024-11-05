@@ -9,7 +9,7 @@ const AboutUs = () => {
       <h3 className="text-2xl md:text-3xl text-purple-600 mb-2 text-center">
         Welcome to The Webnova AI
       </h3>
-      <p className="text-gray-700 text-center mb-4">
+      <p className="text-gray-700 text-center mb-4 font-sans font-normal">
         We transform your digital vision into reality with professional digital
         solutions.
       </p>
