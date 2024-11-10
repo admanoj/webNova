@@ -35,11 +35,25 @@ const Card = () => {
             </h2>
 
             <div className="flex flex-col md:flex-row justify-center md:justify-start space-y-3 md:space-y-0 md:space-x-3 pt-4">
-              <button className="transform transition-transform duration-300 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-semibold py-2 px-6 rounded-lg shadow-md hover:shadow-lg hover:scale-105">
+              <button className="relative transform transition-transform duration-300 bg-purple-200 hover:bg-purple-500 text-purple-700 hover:text-white font-semibold py-2 px-6 rounded-full border-2 border-purple-500 shadow-md hover:shadow-lg hover:scale-105 font-sans flex items-center justify-center group">
                 Get in Touch
+                <span className="ml-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xl">
+                  &gt;
+                </span>
               </button>
-              <button className="transform transition-transform duration-300 border-2 border-purple-600 text-purple-600 font-semibold py-2 px-6 rounded-lg hover:bg-purple-50 hover:scale-105">
-                Learn More
+
+              <button className="relative overflow-hidden transform transition-transform duration-300 text-purple-600 font-semibold py-2 px-6 hover:scale-105 group flex items-center justify-center font-sans text-lg">
+                {/* Main Text */}
+                <span className="flex items-center justify-center">
+                  Learn More
+                  {/* Arrow Icon */}
+                  <span className="ml-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-2xl">
+                    &gt;
+                  </span>
+                </span>
+
+                {/* Underline Effect */}
+                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-purple-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out origin-left"></span>
               </button>
             </div>
 
