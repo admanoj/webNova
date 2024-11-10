@@ -1,67 +1,132 @@
-import React from "react";
+"use client";
 
-const AboutUs = () => {
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Building2, Rocket, Wrench } from "lucide-react";
+import { motion } from "framer-motion";
+
+export default function Component() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+    },
+  };
+
   return (
-    <div className="flex flex-col items-center p-4 md:p-8 bg-gray-200 rounded-lg shadow-md mx-auto">
-      <h2 className="text-2xl md:text-3xl font-bold text-purple-700 mb-4">
-        About Us
-      </h2>
-      <h3 className="text-2xl md:text-3xl text-purple-600 mb-2 text-center">
-        Welcome to The Webnova AI
-      </h3>
-      <p className="text-gray-700 text-center mb-4 font-sans font-normal">
-        We transform your digital vision into reality with professional digital
-        solutions.
-      </p>
+    <motion.div
+      className="container mx-auto px-4 py-8 md:py-16 bg-background"
+      initial="hidden"
+      animate="visible"
+      variants={containerVariants}
+    >
+      <motion.div
+        className="max-w-3xl mx-auto text-center mb-12"
+        variants={itemVariants}
+      >
+        <h1 className="text-3xl md:text-4xl font-bold text-purple-700 mb-4">
+          About Us
+        </h1>
+        <h2 className="text-2xl md:text-3xl text-purple-600 mb-4">
+          Welcome to The Webnova AI
+        </h2>
+        <p className="text-gray-700 text-lg">
+          We transform your digital vision into reality with professional
+          digital solutions.
+        </p>
+      </motion.div>
 
-      {/* Cards Section */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4 w-full">
-        {/* Card 1 */}
-        <div className="bg-white rounded-lg shadow-md p-4 transition-transform transform hover:scale-105 hover:shadow-xl">
-          <h4 className="text-lg md:text-xl font-semibold mb-2 text-purple-700">
-            Who We Are
-          </h4>
-          <p className="text-gray-600 mb-4">
-            At WebNova AI, we are a team of passionate and dedicated software
-            engineers, designers, and innovators committed to transforming ideas
-            into cutting-edge digital solutions. Our company provides custom
-            software solutions, serving clients across various industries
-            worldwide.
-          </p>
-        </div>
+      <motion.div
+        className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8"
+        variants={containerVariants}
+      >
+        <motion.div variants={itemVariants}>
+          <Card className="transition-all duration-300 hover:shadow-lg hover:-translate-y-2">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2 text-purple-700">
+                <Building2 className="h-5 w-5" />
+                Who We Are
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-gray-700">
+                At WebNova AI, we are a team of passionate and dedicated
+                software engineers, designers, and innovators committed to
+                transforming ideas into cutting-edge digital solutions. Our
+                company provides custom software solutions, serving clients
+                across various industries worldwide.
+              </p>
+            </CardContent>
+          </Card>
+        </motion.div>
 
-        {/* Card 2 */}
-        <div className="bg-white rounded-lg shadow-md p-4 transition-transform transform hover:scale-105 hover:shadow-xl">
-          <h4 className="text-lg md:text-xl font-semibold mb-2 text-purple-700">
-            Our Mission
-          </h4>
-          <p className="text-gray-600 mb-4">
-            Our mission is to empower businesses by delivering innovative and
-            reliable software products that drive efficiency, enhance user
-            experience, and foster growth. We believe in the power of technology
-            to solve complex problems and create opportunities for our clients.
-          </p>
-        </div>
+        <motion.div variants={itemVariants}>
+          <Card className="transition-all duration-300 hover:shadow-lg hover:-translate-y-2">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2 text-purple-700">
+                <Rocket className="h-5 w-5" />
+                Our Mission
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-gray-700">
+                Our mission is to empower businesses by delivering innovative
+                and reliable software products that drive efficiency, enhance
+                user experience, and foster growth. We believe in the power of
+                technology to solve complex problems and create opportunities
+                for our clients.
+              </p>
+            </CardContent>
+          </Card>
+        </motion.div>
 
-        {/* Card 3 */}
-        <div className="bg-white rounded-lg shadow-md p-4 transition-transform transform hover:scale-105 hover:shadow-xl">
-          <h4 className="text-lg md:text-xl font-semibold mb-2 text-purple-700">
-            What We Do
-          </h4>
-          <p className="text-gray-600 mb-2">
-            We offer a range of services to meet your digital needs:
-          </p>
-          <ul className="list-disc pl-5 text-gray-600">
-            <li>Website Development</li>
-            <li>Marketing</li>
-            <li>Social Media Management</li>
-            <li>DevOps Services</li>
-            <li>Mobile App Development</li>
-          </ul>
-        </div>
-      </div>
-    </div>
+        <motion.div variants={itemVariants}>
+          <Card className="transition-all duration-300 hover:shadow-lg hover:-translate-y-2">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2 text-purple-700">
+                <Wrench className="h-5 w-5" />
+                What We Do
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-gray-700 mb-4">
+                We offer a range of services to meet your digital needs:
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {[
+                  "Website Development",
+                  "Marketing",
+                  "Social Media Management",
+                  "DevOps Services",
+                  "Mobile App Development",
+                ].map((service, index) => (
+                  <motion.div
+                    key={service}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: index * 0.1 }}
+                  >
+                    <Badge variant="secondary" className="animate-pulse">
+                      {service}
+                    </Badge>
+                  </motion.div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+        </motion.div>
+      </motion.div>
+    </motion.div>
   );
-};
-
-export default AboutUs;
+}

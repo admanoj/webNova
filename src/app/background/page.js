@@ -10,12 +10,12 @@ export function BackgroundBoxesDemo() {
       <Boxes />
       <h1
         className={cn(
-          "md:text-4xl text-2xl text-white relative z-20 text-center"
+          "md:text-4xl text-3xl text-white font-semibold relative z-20 text-center leading-tight"
         )}
       >
         Transforming Ideas into
       </h1>
-      <p className="text-center mt-2 text-neutral-300 relative z-20">
+      <p className="text-center mt-2 text-neutral-300 text-lg md:text-xl font-light relative z-20 leading-snug">
         Digital Experiences
       </p>
     </div>

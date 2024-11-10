@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import { FaFolderOpen, FaThumbsUp, FaUsers } from "react-icons/fa";
 
 const Card = () => {
   return (
@@ -44,15 +45,18 @@ const Card = () => {
 
             {/* Stats Section */}
             <div className="grid grid-cols-3 gap-4 pt-4 border-t border-purple-100 text-center">
-              <div>
+              <div className="flex flex-col items-center">
+                <FaFolderOpen className="w-8 h-8 text-purple-700 mb-2" />
                 <div className="text-xl font-bold text-purple-700">150+</div>
                 <div className="text-xs text-gray-600">Projects</div>
               </div>
-              <div>
+              <div className="flex flex-col items-center">
+                <FaThumbsUp className="w-8 h-8 text-purple-700 mb-2" />
                 <div className="text-xl font-bold text-purple-700">50+</div>
                 <div className="text-xs text-gray-600">Happy Clients</div>
               </div>
-              <div>
+              <div className="flex flex-col items-center">
+                <FaUsers className="w-8 h-8 text-purple-700 mb-2" />
                 <div className="text-xl font-bold text-purple-700">15+</div>
                 <div className="text-xs text-gray-600">Team Members</div>
               </div>

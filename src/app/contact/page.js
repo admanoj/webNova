@@ -1,73 +1,3 @@
-// import React from "react";
-
-// const Contact = () => {
-//   return (
-//     <div className="flex justify-between items-center m-4 ml-20 h-[300px]">
-//       <div className="flex flex-col justify-center space-y-6">
-//         <div>
-//           <h2 className="text-lg text-[#1E1F3A]">Contact Us</h2>
-//           <h2 className="text-lg text-[#1E1F3A]">
-//             Let&apos;s see what we can create together
-//           </h2>
-//         </div>
-
-//         <div>
-//           <span className="text-6xl text-[#1E1F3A] font-sans font-light">
-//             admanoj111@gmail.com
-//           </span>
-//         </div>
-//       </div>
-//       <div className="flex items-center h-full">
-//         <img
-//           className="h-full object-contain ml-auto" // Adjusts height to fill container height
-//           src="/html.svg"
-//           alt="HTML Icon"
-//         />
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Contact;
-// "use client";
-
-// import React from "react";
-// import Image from "next/image"; // Import Image from next/image
-
-// const Contact = () => {
-//   return (
-//     <div className="flex justify-between items-center m-4 ml-20 h-[300px]">
-//       <div className="flex flex-col justify-center space-y-6">
-//         <div>
-//           <h2 className="text-lg text-[#1E1F3A]">Contact Us</h2>
-//           <h2 className="text-lg text-[#1E1F3A]">
-//             Let&apos;s see what we can create together
-//           </h2>
-//         </div>
-
-//         <div>
-//           <span className="text-6xl text-[#1E1F3A] font-sans font-light">
-//             bhattaishan7@gmail.com
-//           </span>
-//         </div>
-//       </div>
-//       <div className="flex items-center h-full relative w-1/2">
-//         {" "}
-//         {/* Specify width */}
-//         <Image
-//           src="/html.svg"
-//           alt="HTML Icon"
-//           layout="fill" // Allow the image to fill the container
-//           objectFit="contain" // Maintain the aspect ratio and fit in the container
-//           className="ml-auto" // Optional: if you want to add margin left to the image
-//         />
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Contact;
-
 "use client";
 
 import React from "react";
@@ -75,17 +5,19 @@ import Image from "next/image";
 
 const Contact = () => {
   return (
-    <div className="flex flex-col md:flex-row justify-between items-center m-4 md:ml-20 h-auto md:h-[300px]">
-      <div className="flex flex-col justify-center space-y-6 md:w-1/2">
+    <div className="flex flex-col md:flex-row justify-between items-center m-4 md:mx-20 p-4 md:p-6 bg-gray-50 rounded-lg shadow-lg h-auto md:h-[300px] space-y-6 md:space-y-0">
+      <div className="flex flex-col justify-center space-y-4 md:space-y-6 md:w-1/2 text-center md:text-left">
         <div>
-          <h2 className="text-lg text-[#1E1F3A]">Contact Us</h2>
-          <h2 className="text-lg text-[#1E1F3A]">
+          <h2 className="text-lg md:text-xl text-[#1E1F3A] font-semibold">
+            Contact Us
+          </h2>
+          <h2 className="text-lg md:text-xl text-[#1E1F3A]">
             Let&apos;s see what we can create together
           </h2>
         </div>
 
         <div>
-          <span className="text-4xl md:text-6xl text-[#1E1F3A] font-sans font-light">
+          <span className="text-3xl md:text-5xl text-[#1E1F3A] font-light">
             bhattaishan7@gmail.com
           </span>
         </div>
@@ -96,7 +28,7 @@ const Contact = () => {
           alt="HTML Icon"
           layout="fill"
           objectFit="contain"
-          className="ml-auto" // Optional: if you want to add margin left to the image
+          className="ml-auto"
         />
       </div>
     </div>
