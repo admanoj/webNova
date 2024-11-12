@@ -1,39 +1,3 @@
-// import React from "react";
-// import { Card } from "antd";
-// const { Meta } = Card;
-// const App = () => (
-//   <div className="flex space-x-6 mt-10">
-//     <Card
-//       hoverable
-//       style={{
-//         width: 240,
-//       }}
-//       cover={<img alt="example" src="/ishan.jpg" />}
-//     >
-//       <Meta title="Founder" description="www.instagram.com" />
-//     </Card>
-//     <Card
-//       hoverable
-//       style={{
-//         width: 240,
-//       }}
-//       cover={<img alt="example" src="/rajnish.jpg" />}
-//     >
-//       <Meta title="Director" description="www.instagram.com" />
-//     </Card>
-//     <Card
-//       hoverable
-//       style={{
-//         width: 240,
-//       }}
-//       cover={<img alt="example" src="sofiya.jpg" />}
-//     >
-//       <Meta title="UI/UX Designer" description="www.instagram.com" />
-//     </Card>
-//   </div>
-// );
-// export default App;
-
 "use client";
 
 import React from "react";
@@ -45,9 +9,9 @@ const App = () => (
     {/* Founder Card */}
     <Card
       hoverable
-      className="w-full md:w-[240px] flex-shrink-0"
+      className="w-full md:w-[240px] flex-shrink-0 transition-transform transform hover:scale-105 hover:shadow-xl rounded-lg border border-gray-200"
       cover={
-        <div className="h-[280px] overflow-hidden">
+        <div className="h-[280px] overflow-hidden rounded-t-lg">
           <img
             alt="Founder"
             src="/ishan.jpg"
@@ -57,14 +21,11 @@ const App = () => (
       }
     >
       <Meta
-        title={<span className="text-lg font-semibold">Founder</span>}
+        title={
+          <span className="text-xl font-semibold text-gray-800">Founder</span>
+        }
         description={
-          <a
-            href="https://www.instagram.com"
-            className="text-blue-500 hover:text-blue-700"
-          >
-            www.instagram.com
-          </a>
+          <h2 className="text-base font-medium text-gray-700">Ishan Bhatta</h2>
         }
       />
     </Card>
@@ -72,9 +33,9 @@ const App = () => (
     {/* Director Card */}
     <Card
       hoverable
-      className="w-full md:w-[240px] flex-shrink-0"
+      className="w-full md:w-[240px] flex-shrink-0 transition-transform transform hover:scale-105 hover:shadow-xl rounded-lg border border-gray-200"
       cover={
-        <div className="h-[280px] overflow-hidden">
+        <div className="h-[280px] overflow-hidden rounded-t-lg">
           <img
             alt="Director"
             src="/rajnish.jpg"
@@ -84,14 +45,13 @@ const App = () => (
       }
     >
       <Meta
-        title={<span className="text-lg font-semibold">Director</span>}
+        title={
+          <span className="text-xl font-semibold text-gray-800">Director</span>
+        }
         description={
-          <a
-            href="https://www.instagram.com"
-            className="text-blue-500 hover:text-blue-700"
-          >
-            www.instagram.com
-          </a>
+          <h2 className="text-base font-medium text-gray-700">
+            Rajnish Adhikari
+          </h2>
         }
       />
     </Card>
@@ -99,9 +59,9 @@ const App = () => (
     {/* UI/UX Designer Card */}
     <Card
       hoverable
-      className="w-full md:w-[240px] flex-shrink-0"
+      className="w-full md:w-[240px] flex-shrink-0 transition-transform transform hover:scale-105 hover:shadow-xl rounded-lg border border-gray-200"
       cover={
-        <div className="h-[280px] overflow-hidden">
+        <div className="h-[280px] overflow-hidden rounded-t-lg">
           <img
             alt="UI/UX Designer"
             src="/sofiya.jpg"
@@ -111,14 +71,13 @@ const App = () => (
       }
     >
       <Meta
-        title={<span className="text-lg font-semibold">UI/UX Designer</span>}
+        title={
+          <span className="text-xl font-semibold text-gray-800">
+            UI/UX Designer
+          </span>
+        }
         description={
-          <a
-            href="https://www.instagram.com"
-            className="text-blue-500 hover:text-blue-700"
-          >
-            www.instagram.com
-          </a>
+          <h2 className="text-base font-medium text-gray-700">Sofiya Pandey</h2>
         }
       />
     </Card>

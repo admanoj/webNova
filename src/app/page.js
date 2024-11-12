@@ -21,6 +21,7 @@ const Layout = () => {
       {/* Ensure Header and Navbar components are client-compatible */}
       <Header />
       <Navbar />
+
       <Card />
       <BackgroundBoxesDemo />
       <AboutUs />
