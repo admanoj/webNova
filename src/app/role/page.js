@@ -144,7 +144,7 @@
 //     </div>
 //   );
 // }
-
+"use client";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
@@ -175,7 +175,7 @@ export default function Component() {
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4 p-4 md:p-6">
-            <div className="space-y-4 text-gray-700 text-sm leading-relaxed">
+            <div className="space-y-4 text-gray-700 text-sm leading-relaxed font-normal">
               <p>
                 Our specialized team at WebNova AI is here to take the load off
                 your shoulders and ensure your quality assurance processes run
@@ -184,7 +184,7 @@ export default function Component() {
               </p>
             </div>
             <div className="flex justify-center">
-              <Button className="py-2 md:py-3 px-6 text-base md:text-lg rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold transition-all duration-300 hover:from-indigo-600 hover:to-purple-600 hover:shadow-lg">
+              <Button className="py-2 md:py-3 px-6 text-base md:text-lg rounded-full bg-purple-600 text-white font-semibold  hover:bg-white hover:text-purple-600 hover:border-purple-700 hover:shadow-lg border ">
                 Explore Now
               </Button>
             </div>
@@ -207,7 +207,7 @@ export default function Component() {
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4 p-4 md:p-6">
-            <div className="space-y-4 text-gray-700 text-sm leading-relaxed">
+            <div className="space-y-4 text-gray-700 text-sm leading-relaxed font-normal">
               <p>
                 Our specialized team at WebNova AI is here to take the load off
                 your shoulders and ensure your quality assurance processes run
@@ -216,7 +216,7 @@ export default function Component() {
               </p>
             </div>
             <div className="flex justify-center">
-              <Button className="py-2 md:py-3 px-6 text-base md:text-lg rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold transition-all duration-300 hover:from-indigo-600 hover:to-purple-600 hover:shadow-lg">
+              <Button className="border py-2 md:py-3 px-6 text-base md:text-lg rounded-full bg-purple-600 text-white font-semibold  hover:bg-white hover:text-purple-600 hover:border-purple-700 hover:shadow-lg ">
                 Explore Now
               </Button>
             </div>
@@ -239,7 +239,7 @@ export default function Component() {
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4 p-4 md:p-6">
-            <div className="space-y-4 text-gray-700 text-sm leading-relaxed">
+            <div className="space-y-4 text-gray-700 text-sm leading-relaxed font-normal">
               <p>
                 Our specialized team at WebNova AI is here to ensure your
                 customer service operations run smoothly. We are equipped to
@@ -249,7 +249,7 @@ export default function Component() {
               </p>
             </div>
             <div className="flex justify-center">
-              <Button className="py-2 md:py-3 px-6 text-base md:text-lg rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold transition-all duration-300 hover:from-indigo-600 hover:to-purple-600 hover:shadow-lg">
+              <Button className="border py-2 md:py-3 px-6 text-base md:text-lg rounded-full bg-purple-600 text-white font-semibold  hover:bg-white hover:text-purple-600 hover:border-purple-700 hover:shadow-lg">
                 Explore Now
               </Button>
             </div>
@@ -272,7 +272,7 @@ export default function Component() {
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4 p-4 md:p-6">
-            <div className="space-y-4 text-gray-700 text-sm leading-relaxed">
+            <div className="space-y-4 text-gray-700 text-sm leading-relaxed font-normal">
               <p>
                 Our specialized team at WebNova AI is here to take the load off
                 your shoulders and ensure your financial operations run like
@@ -282,7 +282,7 @@ export default function Component() {
               </p>
             </div>
             <div className="flex justify-center">
-              <Button className="py-2 md:py-3 px-6 text-base md:text-lg rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold transition-all duration-300 hover:from-indigo-600 hover:to-purple-600 hover:shadow-lg">
+              <Button className="border py-2 md:py-3 px-6 text-base md:text-lg rounded-full bg-purple-600 text-white font-semibold  hover:bg-white hover:text-purple-600 hover:border-purple-700 hover:shadow-lg">
                 Explore Now
               </Button>
             </div>
