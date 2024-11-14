@@ -1,16 +1,22 @@
 "use client";
-
-import Component from "@/components/sidebar/page";
+import { CrmSidebar } from "@/components/crm-sidebar";
 import React from "react";
 
-const CRM = ({ children }) => {
+const Layout = ({ children }) => {
   return (
-    <div className="flex gap-4 ">
-      <Component />
-
-      <div className="bg-[#fff8e6] w-[100vw] h-screen ">{children}</div>
+    <div className="flex">
+      <div className="w-1/4">
+        {" "}
+        {/* Adjust width as needed */}
+        <CrmSidebar />
+      </div>
+      <div className="w-3/4 overflow-auto p-4">
+        {" "}
+        {/* Adjust width and padding as needed */}
+        {children}
+      </div>
     </div>
   );
 };
 
-export default CRM;
+export default Layout;

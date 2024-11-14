@@ -403,7 +403,7 @@ const Navbar = () => {
       )}
 
       <button className="relative transform transition-transform duration-300 bg-purple-200 hover:bg-purple-500 text-purple-700 hover:text-white font-semibold py-2 px-6 rounded-full border-2 border-purple-500 shadow-md hover:shadow-lg hover:scale-105 font-sans flex items-center justify-center group">
-        <Link href="/crm">For Business</Link>
+        <Link href="/crm/dashboard">For Business</Link>
       </button>
     </div>
   );

@@ -1,8 +1,6 @@
 "use client";
-
 import * as React from "react";
 import {
-  Search,
   LayoutDashboard,
   CheckSquare,
   Calendar,
@@ -18,7 +16,6 @@ import {
   Menu,
 } from "lucide-react";
 
-import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Input } from "@/components/ui/input";
@@ -37,8 +34,9 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar";
+import Link from "next/link";
 
-export default function Component() {
+export function CrmSidebar() {
   return (
     <SidebarProvider>
       <div className="flex h-screen">
@@ -60,13 +58,17 @@ export default function Component() {
                     <SidebarMenuItem>
                       <SidebarMenuButton>
                         <LayoutDashboard className="mr-2 h-4 w-4" />
-                        <span>Dashboard</span>
+                        <Link href="/crm/dashboard">
+                          <span>Dashboard</span>
+                        </Link>
                       </SidebarMenuButton>
                     </SidebarMenuItem>
                     <SidebarMenuItem>
                       <SidebarMenuButton>
                         <CheckSquare className="mr-2 h-4 w-4" />
-                        <span>Tasks</span>
+                        <Link href="/crm/tasks">
+                          <span>Tasks</span>
+                        </Link>
                       </SidebarMenuButton>
                     </SidebarMenuItem>
                     <SidebarMenuItem>
@@ -166,10 +168,6 @@ export default function Component() {
             <span className="sr-only">Toggle Sidebar</span>
           </SidebarTrigger>
           {/* Your main content goes here */}
-          <h1 className="text-2xl font-bold">Welcome to CRM Pro</h1>
-          <p className="mt-2">
-            Select an option from the sidebar to get started.
-          </p>
         </main>
       </div>
     </SidebarProvider>

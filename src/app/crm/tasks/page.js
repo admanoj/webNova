@@ -1,9 +1,8 @@
 "use client";
-
 import React from "react";
 
-const Tasks = () => {
-  return <div>Tasks</div>;
+const Task = () => {
+  return <div>Task</div>;
 };
 
-export default Tasks;
+export default Task;
