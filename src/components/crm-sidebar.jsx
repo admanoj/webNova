@@ -1,4 +1,5 @@
 "use client";
+
 import * as React from "react";
 import {
   LayoutDashboard,
@@ -14,6 +15,9 @@ import {
   Settings,
   HelpCircle,
   Menu,
+  FileText,
+  Phone,
+  UserPlus,
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -40,7 +44,9 @@ export function CrmSidebar() {
   return (
     <SidebarProvider>
       <div className="flex h-screen">
-        <Sidebar className="border-r" collapsible="icon">
+        {/* Sidebar Component */}
+        <Sidebar className="border-r hidden md:block" collapsible="icon">
+          {/* Header Section */}
           <SidebarHeader>
             <div className="flex items-center gap-2 px-4 py-2">
               <BarChart3 className="h-6 w-6" />
@@ -50,26 +56,45 @@ export function CrmSidebar() {
               <Input className="w-full" placeholder="Search..." type="search" />
             </div>
           </SidebarHeader>
+
+          {/* Sidebar Content */}
           <ScrollArea className="flex-1">
             <SidebarContent>
+              {/* Main Menu */}
               <SidebarGroup>
                 <SidebarGroupContent>
                   <SidebarMenu>
                     <SidebarMenuItem>
-                      <SidebarMenuButton>
-                        <LayoutDashboard className="mr-2 h-4 w-4" />
-                        <Link href="/crm/dashboard">
+                      <Link href="/crm/dashboard" passHref>
+                        <SidebarMenuButton>
+                          <LayoutDashboard className="mr-2 h-4 w-4" />
                           <span>Dashboard</span>
-                        </Link>
-                      </SidebarMenuButton>
+                        </SidebarMenuButton>
+                      </Link>
                     </SidebarMenuItem>
                     <SidebarMenuItem>
-                      <SidebarMenuButton>
-                        <CheckSquare className="mr-2 h-4 w-4" />
-                        <Link href="/crm/tasks">
+                      <Link href="/crm/tasks" passHref>
+                        <SidebarMenuButton>
+                          <CheckSquare className="mr-2 h-4 w-4" />
                           <span>Tasks</span>
-                        </Link>
-                      </SidebarMenuButton>
+                        </SidebarMenuButton>
+                      </Link>
+                    </SidebarMenuItem>
+                    <SidebarMenuItem>
+                      <Link href="/crm/leads" passHref>
+                        <SidebarMenuButton>
+                          <UserPlus className="mr-2 h-4 w-4" />
+                          <span>Leads</span>
+                        </SidebarMenuButton>
+                      </Link>
+                    </SidebarMenuItem>
+                    <SidebarMenuItem>
+                      <Link href="/crm/opportunities" passHref>
+                        <SidebarMenuButton>
+                          <TrendingUp className="mr-2 h-4 w-4" />
+                          <span>Opportunities</span>
+                        </SidebarMenuButton>
+                      </Link>
                     </SidebarMenuItem>
                     <SidebarMenuItem>
                       <SidebarMenuButton>
@@ -80,8 +105,11 @@ export function CrmSidebar() {
                   </SidebarMenu>
                 </SidebarGroupContent>
               </SidebarGroup>
+
+              {/* Products Section */}
               <SidebarGroup>
-                <SidebarGroupLabel>Products</SidebarGroupLabel>
+                <SidebarGroupLabel>Marketing</SidebarGroupLabel>
+
                 <SidebarGroupContent>
                   <SidebarMenu>
                     <SidebarMenuItem>
@@ -105,26 +133,22 @@ export function CrmSidebar() {
                   </SidebarMenu>
                 </SidebarGroupContent>
               </SidebarGroup>
+
+              {/* Reports Section */}
               <SidebarGroup>
-                <SidebarGroupLabel>Favorites</SidebarGroupLabel>
+                <SidebarGroupLabel>Analytics</SidebarGroupLabel>
                 <SidebarGroupContent>
                   <SidebarMenu>
                     <SidebarMenuItem>
                       <SidebarMenuButton>
+                        <FileText className="mr-2 h-4 w-4" />
+                        <span>Reports</span>
+                      </SidebarMenuButton>
+                    </SidebarMenuItem>
+                    <SidebarMenuItem>
+                      <SidebarMenuButton>
                         <Star className="mr-2 h-4 w-4" />
-                        <span>Opportunity Stages</span>
-                      </SidebarMenuButton>
-                    </SidebarMenuItem>
-                    <SidebarMenuItem>
-                      <SidebarMenuButton>
-                        <TrendingUp className="mr-2 h-4 w-4" />
                         <span>Key Metrics</span>
-                      </SidebarMenuButton>
-                    </SidebarMenuItem>
-                    <SidebarMenuItem>
-                      <SidebarMenuButton>
-                        <Package className="mr-2 h-4 w-4" />
-                        <span>Product Plan</span>
                       </SidebarMenuButton>
                     </SidebarMenuItem>
                   </SidebarMenu>
@@ -132,6 +156,8 @@ export function CrmSidebar() {
               </SidebarGroup>
             </SidebarContent>
           </ScrollArea>
+
+          {/* Footer Section */}
           <SidebarFooter>
             <div className="flex items-center justify-between px-4 py-2">
               <div className="flex items-center gap-2">
@@ -162,12 +188,14 @@ export function CrmSidebar() {
             </div>
           </SidebarFooter>
         </Sidebar>
+
+        {/* Main Content Area */}
         <main className="flex-1 p-4">
           <SidebarTrigger className="mb-4 md:hidden">
             <Menu className="h-6 w-6" />
             <span className="sr-only">Toggle Sidebar</span>
           </SidebarTrigger>
-          {/* Your main content goes here */}
+          {/* Main content goes here */}
         </main>
       </div>
     </SidebarProvider>
