@@ -1,6 +1,6 @@
 "use client";
-import App from "@/components/europeCard/page";
 
+import App from "@/components/europeCard/page";
 import React from "react";
 
 const Teams = () => {

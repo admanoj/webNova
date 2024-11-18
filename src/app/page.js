@@ -1,7 +1,5 @@
 "use client";
 
-import Header from "@/components/header/page";
-import Navbar from "@/components/navbar/page";
 import React from "react";
 import Card from "./card/page";
 import { BackgroundBoxesDemo } from "./background/page";
@@ -14,6 +12,8 @@ import Footer from "./footer/page";
 import Brand from "./brand/page";
 import Role from "./role/page";
 import Service from "./services/page";
+import Header from "../components/header/page";
+import Navbar from "../components/navbar/page";
 
 const Layout = () => {
   return (
