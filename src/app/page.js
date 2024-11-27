@@ -19,7 +19,8 @@ const Layout = () => {
   return (
     <div>
       {/* Ensure Header and Navbar components are client-compatible */}
-      <Header />
+      {/* <Header /> */}
+
       <Navbar />
 
       <Card />

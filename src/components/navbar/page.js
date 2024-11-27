@@ -1,412 +1,226 @@
 "use client";
-import React, { useState, useEffect } from "react";
+
+import * as React from "react";
 import Link from "next/link";
+import { motion } from "framer-motion";
+import { ChevronDown, Menu, X } from "lucide-react";
 
-const Navbar = () => {
-  const [openDropdown, setOpenDropdown] = useState(null); // Track which dropdown is open
-  const [isMounted, setIsMounted] = useState(false); // Track if component is mounted
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // Track mobile menu state
+import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
-  const timeoutRef = React.useRef(null);
+const NavItem = ({ href, children }) => (
+  <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+    <Link
+      href={href}
+      className="text-black hover:text-blue-500 font-medium transition-colors duration-200 relative group text-lg"
+    >
+      {children}
+      <span className="absolute left-0 right-0 bottom-0 h-0.5 bg-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></span>
+    </Link>
+  </motion.div>
+);
 
-  useEffect(() => {
-    setIsMounted(true); // Set mounted state to true
-  }, []);
-
-  const showDropdown = (dropdownName) => {
-    clearTimeout(timeoutRef.current);
-    setOpenDropdown(dropdownName);
-  };
-
-  const hideDropdown = () => {
-    timeoutRef.current = setTimeout(() => {
-      setOpenDropdown(null);
-    }, 200);
-  };
-
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen((prev) => !prev);
-  };
+const NavDropdown = ({ trigger, items }) => {
+  const [isOpen, setIsOpen] = React.useState(false);
 
   return (
-    <div className="bg-[#EFF0F4] rounded-full shadow-md p-4 flex items-center justify-between mt-4 h-24 ml-4 mr-4 sticky top-0 z-30 flex-wrap">
-      <div>
-        <img
-          src="logo.svg"
-          alt="logo"
-          className="h-16 w-40 rounded-full transform scale-150"
-        />
-      </div>
-      <div className="hidden md:flex space-x-8 relative">
-        {" "}
-        {/* Hide on mobile */}
-        {isMounted && (
-          <>
-            {/* Home Link */}
+    <DropdownMenu open={isOpen} onOpenChange={setIsOpen}>
+      <DropdownMenuTrigger asChild>
+        <motion.button
+          className="p-0 font-medium text-black hover:text-blue-500 hover:bg-transparent group text-lg flex items-center"
+          onMouseEnter={() => setIsOpen(true)}
+          onMouseLeave={() => setIsOpen(false)}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          {trigger}
+          <ChevronDown className="ml-1 h-4 w-4 transition-transform group-data-[state=open]:rotate-180" />
+        </motion.button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent
+        align="start"
+        className="w-56 bg-blue-600 text-black border-blue-600"
+        onMouseEnter={() => setIsOpen(true)}
+        onMouseLeave={() => setIsOpen(false)}
+      >
+        {items.map((item) => (
+          <DropdownMenuItem key={item.href} asChild>
             <Link
-              href="#"
-              className="text-xl hover:text-purple-400 font-bold text-purple-700"
+              href={item.href}
+              className="w-full hover:bg-blue-600 transition-colors duration-200 text-base"
             >
-              Home
+              {item.title}
             </Link>
-
-            {/* About Us Dropdown */}
-            <div
-              className="relative"
-              onMouseEnter={() => showDropdown("about")}
-              onMouseLeave={hideDropdown}
-            >
-              <Link
-                href="#"
-                className="text-xl hover:text-purple-400 font-bold text-purple-700"
-              >
-                About Us
-              </Link>
-              {openDropdown === "about" && ( // Check if this dropdown is open
-                <div className="absolute left-0 top-full mt-2 w-48 bg-white shadow-md rounded-md z-20">
-                  <Link
-                    href="#"
-                    className="block px-4 py-2 hover:bg-gray-200 hover:text-purple-400 text-purple-700"
-                  >
-                    How We Work
-                  </Link>
-                  <Link
-                    href="#"
-                    className="block px-4 py-2 text-purple-700 hover:bg-gray-200 hover:text-purple-400"
-                  >
-                    Testimonial
-                  </Link>
-                  <Link
-                    href="#"
-                    className="block px-4 py-2 text-purple-700 hover:bg-gray-200 hover:text-purple-400"
-                  >
-                    FAQs
-                  </Link>
-                </div>
-              )}
-            </div>
-
-            {/* Find Projects Dropdown */}
-            <div
-              className="relative"
-              onMouseEnter={() => showDropdown("projects")}
-              onMouseLeave={hideDropdown}
-            >
-              <Link
-                href="#"
-                className="text-xl hover:text-purple-400 font-bold text-purple-700"
-              >
-                Find Projects
-              </Link>
-              {openDropdown === "projects" && ( // Check if this dropdown is open
-                <div className="absolute left-0 top-full mt-2 w-48 bg-white shadow-md rounded-md z-20">
-                  <Link
-                    href="#"
-                    className="block px-4 py-2 text-purple-700 hover:bg-gray-200 hover:text-purple-700"
-                  >
-                    Save Project
-                  </Link>
-                  <Link
-                    href="#"
-                    className="block px-4 py-2 text-purple-700 hover:bg-gray-200 hover:text-purple-700"
-                  >
-                    Proposals
-                  </Link>
-                  <Link
-                    href="#"
-                    className="block px-4 py-2 text-purple-700 hover:bg-gray-200 hover:text-purple-700"
-                  >
-                    Offers
-                  </Link>
-                  <Link
-                    href="#"
-                    className="block px-4 py-2 text-purple-700 hover:bg-gray-200 hover:text-purple-700 "
-                  >
-                    HomePage
-                  </Link>
-                </div>
-              )}
-            </div>
-
-            {/* Join Our Team Dropdown */}
-            <div
-              className="relative"
-              onMouseEnter={() => showDropdown("team")}
-              onMouseLeave={hideDropdown}
-            >
-              <Link
-                href="#"
-                className="text-xl hover:text-purple-400 font-bold text-purple-700"
-              >
-                Join Our Team
-              </Link>
-              {openDropdown === "team" && ( // Check if this dropdown is open
-                <div className="absolute left-0 top-full mt-2 w-48 bg-white shadow-md rounded-md z-20">
-                  <Link
-                    href="#"
-                    className="block px-4 py-2 text-purple-700 hover:bg-gray-200 hover:text-purple-700"
-                  >
-                    Application Process
-                  </Link>
-                  <Link
-                    href="#"
-                    className="block px-4 py-2 text-purple-700 hover:bg-gray-200 hover:text-purple-700"
-                  >
-                    Benefits
-                  </Link>
-                  <Link
-                    href="#"
-                    className="block px-4 py-2 text-purple-700 hover:bg-gray-200 hover:text-purple-700"
-                  >
-                    Culture
-                  </Link>
-                  <Link
-                    href="#"
-                    className="block px-4 py-2 text-purple-700 hover:bg-gray-200 hover:text-purple-700"
-                  >
-                    Open Positions
-                  </Link>
-                </div>
-              )}
-            </div>
-
-            {/* Resources Dropdown */}
-            <div
-              className="relative"
-              onMouseEnter={() => showDropdown("resources")}
-              onMouseLeave={hideDropdown}
-            >
-              <Link
-                href="#"
-                className="text-xl hover:text-purple-400 font-bold text-purple-700"
-              >
-                Resources
-              </Link>
-              {openDropdown === "resources" && ( // Check if this dropdown is open
-                <div className="absolute left-0 top-full mt-2 w-48 bg-white shadow-md rounded-md z-20">
-                  <Link
-                    href="#"
-                    className="block px-4 py-2 text-purple-700 hover:bg-gray-200 hover:text-purple-700"
-                  >
-                    See All
-                  </Link>
-                  <Link
-                    href="#"
-                    className="block px-4 py-2 text-purple-700 hover:bg-gray-200 hover:text-purple-700"
-                  >
-                    Articles
-                  </Link>
-                  <Link
-                    href="#"
-                    className="block px-4 py-2 text-purple-700 hover:bg-gray-200 hover:text-purple-700"
-                  >
-                    Resources
-                  </Link>
-                  <Link
-                    href="#"
-                    className="block px-4 py-2 text-purple-700 hover:bg-gray-200 hover:text-purple-700"
-                  >
-                    Use Cases
-                  </Link>
-                </div>
-              )}
-            </div>
-          </>
-        )}
-      </div>
-
-      {/* Hamburger Menu for Mobile */}
-      <div className="md:hidden flex items-center">
-        <button onClick={toggleMobileMenu} className="text-purple-700">
-          {/* Hamburger Icon */}
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-8 w-8"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M4 6h16M4 12h16m-7 6h7"
-            />
-          </svg>
-        </button>
-      </div>
-
-      {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <div className="absolute left-0 top-full mt-2 w-full bg-white shadow-md rounded-md z-20 flex flex-col space-y-2 p-4">
-          <Link
-            href="#"
-            className="block text-purple-700 hover:bg-gray-200 hover:text-purple-400"
-          >
-            Home
-          </Link>
-          <div
-            className="relative"
-            onMouseEnter={() => showDropdown("about")}
-            onMouseLeave={hideDropdown}
-          >
-            <Link
-              href="#"
-              className="block text-purple-700 hover:bg-gray-200 hover:text-purple-400"
-            >
-              About Us
-            </Link>
-            {openDropdown === "about" && (
-              <div className="absolute left-0 top-full mt-2 w-48 bg-white shadow-md rounded-md z-20">
-                <Link
-                  href="#"
-                  className="block px-4 py-2 hover:bg-gray-200 hover:text-purple-400 text-purple-700"
-                >
-                  How We Work
-                </Link>
-                <Link
-                  href="#"
-                  className="block px-4 py-2 text-purple-700 hover:bg-gray-200 hover:text-purple-400"
-                >
-                  Testimonial
-                </Link>
-                <Link
-                  href="#"
-                  className="block px-4 py-2 text-purple-700 hover:bg-gray-200 hover:text-purple-400"
-                >
-                  FAQs
-                </Link>
-              </div>
-            )}
-          </div>
-          <div
-            className="relative"
-            onMouseEnter={() => showDropdown("projects")}
-            onMouseLeave={hideDropdown}
-          >
-            <Link
-              href="#"
-              className="block text-purple-700 hover:bg-gray-200 hover:text-purple-400"
-            >
-              Find Projects
-            </Link>
-            {openDropdown === "projects" && (
-              <div className="absolute left-0 top-full mt-2 w-48 bg-white shadow-md rounded-md z-20">
-                <Link
-                  href="#"
-                  className="block px-4 py-2 text-purple-700 hover:bg-gray-200 hover:text-purple-700"
-                >
-                  Save Project
-                </Link>
-                <Link
-                  href="#"
-                  className="block px-4 py-2 text-purple-700 hover:bg-gray-200 hover:text-purple-700"
-                >
-                  Proposals
-                </Link>
-                <Link
-                  href="#"
-                  className="block px-4 py-2 text-purple-700 hover:bg-gray-200 hover:text-purple-700"
-                >
-                  Offers
-                </Link>
-                <Link
-                  href="#"
-                  className="block px-4 py-2 text-purple-700 hover:bg-gray-200 hover:text-purple-700"
-                >
-                  HomePage
-                </Link>
-              </div>
-            )}
-          </div>
-          <div
-            className="relative"
-            onMouseEnter={() => showDropdown("team")}
-            onMouseLeave={hideDropdown}
-          >
-            <Link
-              href="#"
-              className="block text-purple-700 hover:bg-gray-200 hover:text-purple-400"
-            >
-              Join Our Team
-            </Link>
-            {openDropdown === "team" && (
-              <div className="absolute left-0 top-full mt-2 w-48 bg-white shadow-md rounded-md z-20">
-                <Link
-                  href="#"
-                  className="block px-4 py-2 text-purple-700 hover:bg-gray-200 hover:text-purple-700"
-                >
-                  Application Process
-                </Link>
-                <Link
-                  href="#"
-                  className="block px-4 py-2 text-purple-700 hover:bg-gray-200 hover:text-purple-700"
-                >
-                  Benefits
-                </Link>
-                <Link
-                  href="#"
-                  className="block px-4 py-2 text-purple-700 hover:bg-gray-200 hover:text-purple-700"
-                >
-                  Culture
-                </Link>
-                <Link
-                  href="#"
-                  className="block px-4 py-2 text-purple-700 hover:bg-gray-200 hover:text-purple-700"
-                >
-                  Open Positions
-                </Link>
-              </div>
-            )}
-          </div>
-          <div
-            className="relative"
-            onMouseEnter={() => showDropdown("resources")}
-            onMouseLeave={hideDropdown}
-          >
-            <Link
-              href="#"
-              className="block text-purple-700 hover:bg-gray-200 hover:text-purple-400"
-            >
-              Resources
-            </Link>
-            {openDropdown === "resources" && (
-              <div className="absolute left-0 top-full mt-2 w-48 bg-white shadow-md rounded-md z-20">
-                <Link
-                  href="#"
-                  className="block px-4 py-2 text-purple-700 hover:bg-gray-200 hover:text-purple-700"
-                >
-                  See All
-                </Link>
-                <Link
-                  href="#"
-                  className="block px-4 py-2 text-purple-700 hover:bg-gray-200 hover:text-purple-700"
-                >
-                  Articles
-                </Link>
-                <Link
-                  href="#"
-                  className="block px-4 py-2 text-purple-700 hover:bg-gray-200 hover:text-purple-700"
-                >
-                  Resources
-                </Link>
-                <Link
-                  href="#"
-                  className="block px-4 py-2 text-purple-700 hover:bg-gray-200 hover:text-purple-700"
-                >
-                  Use Cases
-                </Link>
-              </div>
-            )}
-          </div>
-        </div>
-      )}
-
-      <button className="relative transform transition-transform duration-300 bg-purple-200 hover:bg-purple-500 text-purple-700 hover:text-white font-semibold py-2 px-6 rounded-full border-2 border-purple-500 shadow-md hover:shadow-lg hover:scale-105 font-sans flex items-center justify-center group">
-        <Link href="/crm/dashboard">For Business</Link>
-      </button>
-    </div>
+          </DropdownMenuItem>
+        ))}
+      </DropdownMenuContent>
+    </DropdownMenu>
   );
 };
 
-export default Navbar;
+export default function Navbar() {
+  const [isScrolled, setIsScrolled] = React.useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  return (
+    <motion.nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out ${
+        isScrolled ? "bg-white" : "bg-transparent"
+      }`}
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ type: "spring", stiffness: 100, damping: 20 }}
+    >
+      <div className="container mx-auto px-4">
+        <div className="flex items-center justify-between h-20">
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="flex items-center space-x-2"
+          >
+            <Link href="/" className="flex items-center space-x-2 group">
+              <img
+                src="/ksvn.png"
+                alt="KSVA Logo"
+                className="h-24 w-24 transform transition-transform duration-300 ease-in-out "
+              />
+              <span className="text-3xl font-bold text-blue-700 tracking-tight">
+                KSVA
+              </span>
+            </Link>
+          </motion.div>
+
+          <div className="hidden md:flex items-center space-x-8">
+            <NavItem href="/">Home</NavItem>
+            <NavDropdown
+              trigger="About Us"
+              items={[
+                { title: "FAQs", href: "#faqs" },
+                { title: "Culture", href: "#culture" },
+                { title: "Testimonials", href: "#testimonials" },
+                { title: "How We Work", href: "#how-we-work" },
+              ]}
+            />
+            <NavDropdown
+              trigger="Find Projects"
+              items={[
+                { title: "Save Project", href: "#save-project" },
+                { title: "Proposals", href: "#proposals" },
+                { title: "Offers", href: "#offers" },
+                { title: "Homepage", href: "#homepage" },
+              ]}
+            />
+            <NavDropdown
+              trigger="Join Our Team"
+              items={[
+                { title: "Application Process", href: "#application-process" },
+                { title: "Benefits", href: "#benefits" },
+                { title: "Open Positions", href: "#open-positions" },
+              ]}
+            />
+            <NavDropdown
+              trigger="Resources"
+              items={[
+                { title: "See All", href: "#see-all" },
+                { title: "Articles", href: "#articles" },
+                { title: "Resources", href: "#resources" },
+                { title: "Use Cases", href: "#use-cases" },
+              ]}
+            />
+          </div>
+
+          <div className="flex items-center space-x-4">
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Button
+                asChild
+                className="bg-blue-600 text-white hover:bg-blue-700 shadow-md transition-all duration-300 ease-in-out hover:shadow-lg transform hover:-translate-y-0.5 text-lg"
+              >
+                <Link href="/crm/dashboard">For Business</Link>
+              </Button>
+            </motion.div>
+
+            <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
+              <SheetTrigger asChild>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="md:hidden text-white"
+                >
+                  {isMobileMenuOpen ? (
+                    <X className="h-6 w-6" />
+                  ) : (
+                    <Menu className="h-6 w-6" />
+                  )}
+                  <span className="sr-only">Toggle menu</span>
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="bg-blue-800 text-white">
+                <nav className="flex flex-col space-y-4 mt-6">
+                  <Link
+                    href="/"
+                    className="text-black hover:text-blue-500 font-medium text-xl"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Home
+                  </Link>
+                  <NavDropdown
+                    trigger="About Us"
+                    items={[
+                      { title: "FAQs", href: "#faqs" },
+                      { title: "Culture", href: "#culture" },
+                      { title: "Testimonials", href: "#testimonials" },
+                      { title: "How We Work", href: "#how-we-work" },
+                    ]}
+                  />
+                  <NavDropdown
+                    trigger="Find Projects"
+                    items={[
+                      { title: "Save Project", href: "#save-project" },
+                      { title: "Proposals", href: "#proposals" },
+                      { title: "Offers", href: "#offers" },
+                      { title: "Homepage", href: "#homepage" },
+                    ]}
+                  />
+                  <NavDropdown
+                    trigger="Join Our Team"
+                    items={[
+                      {
+                        title: "Application Process",
+                        href: "#application-process",
+                      },
+                      { title: "Benefits", href: "#benefits" },
+                      { title: "Open Positions", href: "#open-positions" },
+                    ]}
+                  />
+                  <NavDropdown
+                    trigger="Resources"
+                    items={[
+                      { title: "See All", href: "#see-all" },
+                      { title: "Articles", href: "#articles" },
+                      { title: "Resources", href: "#resources" },
+                      { title: "Use Cases", href: "#use-cases" },
+                    ]}
+                  />
+                </nav>
+              </SheetContent>
+            </Sheet>
+          </div>
+        </div>
+      </div>
+    </motion.nav>
+  );
+}

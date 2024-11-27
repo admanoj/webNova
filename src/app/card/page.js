@@ -4,7 +4,7 @@ import { FaFolderOpen, FaThumbsUp, FaUsers } from "react-icons/fa";
 
 const Card = () => {
   return (
-    <div className="mt-5 min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 p-8 md:p-12 overflow-hidden relative">
+    <div className=" min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 p-8 md:p-12 overflow-hidden relative">
       {/* Background Decorative Elements */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-purple-200 rounded-full filter blur-3xl opacity-40 animate-blob" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-200 rounded-full filter blur-3xl opacity-40 animate-blob animation-delay-2000" />

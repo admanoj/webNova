@@ -18,7 +18,7 @@ const Contact = () => {
 
         <div>
           <span className="text-3xl md:text-5xl text-[#1E1F3A] font-light">
-            bhattaishan7@gmail.com
+            contactus@ksvatechsolutions.com
           </span>
         </div>
       </div>
