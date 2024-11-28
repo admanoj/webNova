@@ -12,8 +12,9 @@ import Footer from "./footer/page";
 import Brand from "./brand/page";
 import Role from "./role/page";
 import Service from "./services/page";
-import Header from "../components/header/page";
+
 import Navbar from "../components/navbar/page";
+import Video from "./video/page";
 
 const Layout = () => {
   return (
@@ -22,7 +23,7 @@ const Layout = () => {
       {/* <Header /> */}
 
       <Navbar />
-
+      <Video />
       <Card />
       <BackgroundBoxesDemo />
       <AboutUs />

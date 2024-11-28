@@ -17,11 +17,11 @@ export default function Footer() {
           {/* Left Side: Logo */}
           <div className="flex items-center space-x-2 w-full lg:w-auto">
             <Image
-              src="/logo.svg"
+              src="/ksvn.png"
               alt="Company Logo"
-              width={150}
+              width={160}
               height={150}
-              className="bg-gray-800"
+              className="bg-gray-800 mt-1"
             />
           </div>
 
