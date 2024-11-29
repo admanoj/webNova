@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { NavbarItems } from "../navbar";
+import { NavbarItems } from "../NavbarItems";
 
 const Navbar = () => {
   return (

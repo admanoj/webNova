@@ -3,7 +3,7 @@ import React from "react";
 
 const Service = () => {
   return (
-    <div className="px-6 py-12 bg-gray-50 ">
+    <div id="section" className="px-6 py-12 bg-gray-50 ">
       {/* Header Section */}
       <div className="text-center mb-12">
         <p className="text-gray-600 font-semibold text-lg flex items-center justify-center">

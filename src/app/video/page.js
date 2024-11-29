@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import React from "react";
 
 const Video = () => {
@@ -42,12 +43,16 @@ const Video = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="px-8 py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-700 transition duration-300">
-              Explore Services
-            </button>
-            <button className="px-8 py-3 border-2 border-purple-400 text-white rounded-lg font-semibold hover:bg-purple-600 transition duration-300">
-              Contact Us
-            </button>
+            <Link href="#section">
+              <button className="px-8 py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-700 transition duration-300">
+                Explore Services
+              </button>
+            </Link>
+            <Link href="#contact">
+              <button className="px-8 py-3 border-2 border-purple-400 text-white rounded-lg font-semibold hover:bg-purple-600 transition duration-300">
+                Contact Us
+              </button>
+            </Link>
           </div>
         </div>
       </div>

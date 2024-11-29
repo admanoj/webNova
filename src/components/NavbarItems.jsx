@@ -3,7 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu } from "lucide-react";
+import { Menu, ChevronDown } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -16,7 +16,20 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import {
+  Dialog,
+  DialogContent,
+  DialogTrigger,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import { VisuallyHidden } from "@/components/ui/visually-hidden";
 
 const navigationItems = [
   {
@@ -130,50 +143,52 @@ export function NavbarItems() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 w-full transition-colors duration-300",
-        isScrolled
-          ? "bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
-          : "bg-transparent"
+        "sticky top-0 z-50 w-full transition-colors duration-300 ",
+        isScrolled ? "bg-blue-600 text-white" : "bg-white text-blue-600"
       )}
     >
-      <div className="container flex h-20 items-center justify-between">
+      <div className="container flex h-20 items-center justify-between ">
         <Link href="/" className="flex items-center space-x-2">
           <Image
             src="/ksvn.png"
-            alt="KSVA Logo"
+            alt="Company Logo"
             width={96}
             height={96}
-            className="h-24 w-24"
+            className="h-24 w-28"
           />
-          <span className="text-3xl font-bold tracking-tight text-primary">
-            KSVA
-          </span>
         </Link>
         <NavigationMenu className="hidden lg:flex">
           <NavigationMenuList>
             <NavigationMenuItem>
               <Link href="/" legacyBehavior passHref>
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                <NavigationMenuLink
+                  className={cn(
+                    navigationMenuTriggerStyle(),
+                    "text-black hover:bg-blue-100 hover:text-blue-600"
+                  )}
+                >
                   Home
                 </NavigationMenuLink>
               </Link>
             </NavigationMenuItem>
             {navigationItems.map((item) => (
               <NavigationMenuItem key={item.title}>
-                <NavigationMenuTrigger>{item.title}</NavigationMenuTrigger>
+                <NavigationMenuTrigger className="text-black hover:bg-blue-100 hover:text-blue-600">
+                  {item.title}
+                </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-white">
                     {item.items.map((subItem) => (
                       <li key={subItem.title}>
                         <NavigationMenuLink asChild>
                           <Link
                             href={subItem.href}
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-blue-100 hover:text-blue-600 focus:bg-blue-100 focus:text-blue-600"
                           >
-                            <div className="text-sm font-medium leading-none">
+                            <div className="text-sm font-medium leading-none text-black">
                               {subItem.title}
                             </div>
-                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                            <p className="line-clamp-2 text-sm leading-snug text-blue-500">
                               {subItem.description}
                             </p>
                           </Link>
@@ -187,64 +202,76 @@ export function NavbarItems() {
           </NavigationMenuList>
         </NavigationMenu>
         <div className="flex items-center space-x-4">
-          <Button asChild size="lg" className="hidden lg:flex">
+          <Button
+            asChild
+            size="lg"
+            className="hidden lg:flex bg-blue-600 text-white hover:bg-blue-700"
+          >
             <Link href="/crm/dashboard">For Business</Link>
           </Button>
-          <Sheet>
-            <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="lg:hidden">
+          <Dialog>
+            <DialogTrigger asChild>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="lg:hidden text-current"
+              >
                 <Menu className="h-6 w-6" />
                 <span className="sr-only">Toggle menu</span>
               </Button>
-            </SheetTrigger>
-            <SheetContent side="right" className="w-full sm:w-[350px]">
+            </DialogTrigger>
+            <DialogContent className="w-full sm:w-[350px] bg-white overflow-y-auto">
+              <VisuallyHidden>
+                <DialogTitle>Navigation Menu</DialogTitle>
+              </VisuallyHidden>
               <div className="grid gap-4 py-6">
                 <Link href="/" className="flex items-center space-x-2">
                   <Image
                     src="/ksvn.png"
-                    alt="KSVA Logo"
+                    alt="Company Logo"
                     width={48}
                     height={48}
                     className="h-12 w-12"
                   />
-                  <span className="text-xl font-bold">KSVA</span>
                 </Link>
-                <div className="grid gap-2">
-                  <Link
-                    href="/"
-                    className="flex w-full items-center py-2 text-lg font-semibold"
-                  >
-                    Home
-                  </Link>
-                  {navigationItems.map((section) => (
-                    <div key={section.title} className="grid gap-2">
-                      <div className="flex w-full items-center py-2 text-lg font-semibold">
+                <Accordion type="single" collapsible className="w-full">
+                  <AccordionItem value="home">
+                    <AccordionTrigger className="text-black hover:text-blue-600">
+                      Home
+                    </AccordionTrigger>
+                  </AccordionItem>
+                  {navigationItems.map((section, index) => (
+                    <AccordionItem value={`item-${index}`} key={section.title}>
+                      <AccordionTrigger className="text-black hover:text-blue-600">
                         {section.title}
-                      </div>
-                      <div className="grid gap-2 pl-4">
-                        {section.items.map((item) => (
-                          <Link
-                            key={item.title}
-                            href={item.href}
-                            className="text-muted-foreground hover:text-primary"
-                          >
-                            {item.title}
-                          </Link>
-                        ))}
-                      </div>
-                    </div>
+                      </AccordionTrigger>
+                      <AccordionContent>
+                        <div className="grid gap-2 pl-4">
+                          {section.items.map((item) => (
+                            <Link
+                              key={item.title}
+                              href={item.href}
+                              className="text-black hover:text-blue-600 py-2"
+                            >
+                              {item.title}
+                            </Link>
+                          ))}
+                        </div>
+                      </AccordionContent>
+                    </AccordionItem>
                   ))}
-                </div>
-
-                <Link href="/crm/dashboard">
-                  {" "}
-                  <Button asChild size="lg">
-                    For Business{" "}
+                </Accordion>
+                <Link href="/crm/dashboard" className="mt-4">
+                  <Button
+                    size="lg"
+                    className="w-full bg-blue-600 text-white hover:bg-blue-700"
+                  >
+                    For Business
                   </Button>
                 </Link>
               </div>
-            </SheetContent>
-          </Sheet>
+            </DialogContent>
+          </Dialog>
         </div>
       </div>
     </header>
