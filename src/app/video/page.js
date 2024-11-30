@@ -1,4 +1,5 @@
 "use client";
+
 import Link from "next/link";
 import React from "react";
 
@@ -17,24 +18,24 @@ const Video = () => {
         Your browser does not support the video tag.
       </video>
 
-      {/* Dark Overlay with Purple Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-purple-900/40"></div>
+      {/* Dark Overlay with Blue Gradient */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-blue-900/40"></div>
 
       {/* Content */}
       <div className="relative z-10 flex h-full items-center justify-center px-6">
         <div className="max-w-4xl text-center">
-          {/* Decorative lines matching your services section */}
+          {/* Decorative lines */}
           <p className="text-gray-200 font-semibold text-lg flex items-center justify-center mb-6">
-            <span className="w-16 border-t border-purple-400"></span>
+            <span className="w-16 border-t border-blue-400"></span>
             <span className="mx-4 font-sans font-medium">
               Welcome to KSVA Tech Solutions
             </span>
-            <span className="w-16 border-t border-purple-400"></span>
+            <span className="w-16 border-t border-blue-400"></span>
           </p>
 
           <h1 className="mb-6 text-3xl md:text-4xl font-extrabold text-white">
             Transforming Ideas into{" "}
-            <span className="text-purple-400">Digital Excellence</span>
+            <span className="text-blue-400">Digital Excellence</span>
           </h1>
 
           <p className="mb-8 text-gray-200 text-xl font-normal font-sans max-w-2xl mx-auto">
@@ -44,12 +45,12 @@ const Video = () => {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="#section">
-              <button className="px-8 py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-700 transition duration-300">
+              <button className="px-8 py-3  bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition duration-300">
                 Explore Services
               </button>
             </Link>
             <Link href="#contact">
-              <button className="px-8 py-3 border-2 border-purple-400 text-white rounded-lg font-semibold hover:bg-purple-600 transition duration-300">
+              <button className="px-8 py-3 border-2 border-blue-400 text-white rounded-lg font-semibold hover:bg-white hover:text-black hover:border-blue-600 transition duration-300">
                 Contact Us
               </button>
             </Link>

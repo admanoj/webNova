@@ -26,7 +26,7 @@ export default function Component() {
 
   return (
     <motion.div
-      className="container mx-auto px-4 py-8 md:py-16 bg-background"
+      className="container mx-auto px-4 py-8 md:py-16 bg-white"
       initial="hidden"
       animate="visible"
       variants={containerVariants}
@@ -35,10 +35,10 @@ export default function Component() {
         className="max-w-3xl mx-auto text-center mb-12"
         variants={itemVariants}
       >
-        <h1 className="text-3xl md:text-4xl font-bold text-purple-700 mb-4">
+        <h1 className="text-3xl md:text-4xl font-bold text-blue-700 mb-4">
           About Us
         </h1>
-        <h2 className="text-2xl md:text-3xl text-purple-600 mb-4">
+        <h2 className="text-2xl md:text-3xl text-blue-600 mb-4">
           Welcome to The Webnova AI
         </h2>
         <p className="text-gray-700 text-lg">
@@ -52,9 +52,9 @@ export default function Component() {
         variants={containerVariants}
       >
         <motion.div variants={itemVariants}>
-          <Card className="transition-all duration-300 hover:shadow-lg hover:-translate-y-2">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-purple-700">
+          <Card className="transition-all duration-300 hover:shadow-lg hover:-translate-y-2 border-blue-200">
+            <CardHeader className="bg-blue-50">
+              <CardTitle className="flex items-center gap-2 text-blue-700">
                 <Building2 className="h-5 w-5" />
                 Who We Are
               </CardTitle>
@@ -72,9 +72,9 @@ export default function Component() {
         </motion.div>
 
         <motion.div variants={itemVariants}>
-          <Card className="transition-all duration-300 hover:shadow-lg hover:-translate-y-2">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-purple-700">
+          <Card className="transition-all duration-300 hover:shadow-lg hover:-translate-y-2 border-blue-200">
+            <CardHeader className="bg-blue-50">
+              <CardTitle className="flex items-center gap-2 text-blue-700">
                 <Rocket className="h-5 w-5" />
                 Our Mission
               </CardTitle>
@@ -92,9 +92,9 @@ export default function Component() {
         </motion.div>
 
         <motion.div variants={itemVariants}>
-          <Card className="transition-all duration-300 hover:shadow-lg hover:-translate-y-2">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-purple-700">
+          <Card className="transition-all duration-300 hover:shadow-lg hover:-translate-y-2 border-blue-200">
+            <CardHeader className="bg-blue-50">
+              <CardTitle className="flex items-center gap-2 text-blue-700">
                 <Wrench className="h-5 w-5" />
                 What We Do
               </CardTitle>
@@ -117,7 +117,10 @@ export default function Component() {
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: index * 0.1 }}
                   >
-                    <Badge variant="secondary" className="animate-pulse">
+                    <Badge
+                      variant="secondary"
+                      className="bg-blue-100 text-blue-700 hover:bg-blue-200"
+                    >
                       {service}
                     </Badge>
                   </motion.div>

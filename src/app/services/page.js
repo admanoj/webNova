@@ -16,15 +16,15 @@ const Service = () => {
 
         <h2 className="text-3xl md:text-4xl font-extrabold text-gray-800">
           Exceptional Services For{" "}
-          <span className="text-purple-600">Your Business Growth</span>
+          <span className="text-blue-600">Your Business Growth</span>
         </h2>
       </div>
 
       {/* Services Grid with 4 cards per row */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         {/* Card Components */}
-        <div className=" p-6 rounded-lg hover:bg-purple-200 ">
-          <img src="/dev.svg" className="w-32 h-32" />
+        <div className=" p-6 rounded-lg hover:bg-blue-200 ">
+          <img src="/w.svg" className="w-32 h-32" />
           <h3 className="text-2xl font-semibold text-gray-800">
             Website
             <br /> Development
@@ -36,7 +36,7 @@ const Service = () => {
           </p>
         </div>
 
-        <div className="p-6 rounded-lg hover:bg-purple-200 ">
+        <div className="p-6 rounded-lg hover:bg-blue-200 ">
           <img src="/ui.svg" className="w-32 h-32" />
           <h3 className="text-2xl font-semibold text-gray-800">UI/UX</h3>
           <p className="mt-4 text-gray-700 text-xl font-normal font-sans">
@@ -45,8 +45,8 @@ const Service = () => {
           </p>
         </div>
 
-        <div className="p-6 rounded-lg hover:bg-purple-200 ">
-          <img src="/branding.svg" className="w-32 h-32" />
+        <div className="p-6 rounded-lg hover:bg-blue-200 ">
+          <img src="/brand.svg" className="w-32 h-32" />
           <h3 className="text-2xl font-semibold text-gray-800">Branding</h3>
           <p className="mt-4 text-gray-700 text-xl font-normal font-sans">
             Create a strong, memorable brand identity that resonates with your
@@ -54,7 +54,7 @@ const Service = () => {
           </p>
         </div>
 
-        <div className="p-6 rounded-lg hover:bg-purple-200 ">
+        <div className="p-6 rounded-lg hover:bg-blue-200 ">
           <img src="/seo.svg" className="w-32 h-32" />
           <h3 className="text-2xl font-semibold text-gray-800">
             Search Engine Optimization (SEO)
@@ -65,7 +65,7 @@ const Service = () => {
           </p>
         </div>
 
-        <div className="p-6 rounded-lg hover:bg-purple-200 ">
+        <div className="p-6 rounded-lg hover:bg-blue-200 ">
           <img src="/smm.svg" className="w-32 h-32" />
           <h3 className="text-2xl font-semibold text-gray-800">
             Social Media Marketing (SMM)
@@ -76,7 +76,7 @@ const Service = () => {
           </p>
         </div>
 
-        <div className="p-6 rounded-lg hover:bg-purple-200 ">
+        <div className="p-6 rounded-lg hover:bg-blue-200 ">
           <img src="/content.svg" className="w-32 h-32" />
           <h3 className="text-2xl font-semibold text-gray-800">
             Content Creation
@@ -86,7 +86,7 @@ const Service = () => {
           </p>
         </div>
 
-        <div className="p-6 rounded-lg hover:bg-purple-200 ">
+        <div className="p-6 rounded-lg hover:bg-blue-200 ">
           <img src="/digital.svg" className="w-32 h-32" />
           <h3 className="text-2xl font-semibold text-gray-800">
             Digital Marketing
@@ -97,8 +97,8 @@ const Service = () => {
           </p>
         </div>
 
-        <div className="p-6 rounded-lg hover:bg-purple-200 ">
-          <img src="/lead.svg" className="w-32 h-32" />
+        <div className="p-6 rounded-lg hover:bg-blue-200 ">
+          <img src="/leads.svg" className="w-32 h-32" />
           <h3 className="text-2xl font-semibold text-gray-800">
             Lead Generation
           </h3>

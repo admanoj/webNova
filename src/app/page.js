@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import Card from "./card/page";
+
 import { BackgroundBoxesDemo } from "./background/page";
 import AboutUs from "./aboutUs/page";
 
@@ -13,17 +13,15 @@ import Brand from "./brand/page";
 import Role from "./role/page";
 import Service from "./services/page";
 
-import Navbar from "../components/navbar/page";
 import Video from "./video/page";
+import { NavbarItems } from "./navbar/page";
 
 const Layout = () => {
   return (
     <div>
-      {/* Ensure Header and Navbar components are client-compatible */}
-
-      <Navbar />
+      <NavbarItems />
       <Video />
-      <Card />
+
       <BackgroundBoxesDemo />
       <AboutUs />
       <SparklesPreview />

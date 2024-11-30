@@ -28,7 +28,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="bg-white relative overflow-hidden">
+    <div id="contact" className="bg-white relative overflow-hidden">
       <div className="container mx-auto px-4 py-16 md:py-24">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 md:gap-12">
           {/* Left Column */}
