@@ -2,125 +2,148 @@
 
 import React from "react";
 import Image from "next/image";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Link from "next/link";
 import {
-  faLinkedin,
-  faInstagram,
-  faFacebook,
-} from "@fortawesome/free-brands-svg-icons";
+  Home,
+  Info,
+  Briefcase,
+  BookOpen,
+  MapPin,
+  Mail,
+  Phone,
+  Linkedin,
+  Instagram,
+  Facebook,
+} from "lucide-react";
 
 export default function Footer() {
+  const navItems = [
+    { name: "Home", href: "#home", icon: Home },
+    { name: "About", href: "#about", icon: Info },
+    { name: "Our Services", href: "#our-services", icon: Briefcase },
+    { name: "Blogs", href: "#blogs", icon: BookOpen },
+  ];
+
+  const contactInfo = [
+    { icon: MapPin, text: "Sacramento, California" },
+    { icon: Mail, text: "bhattaishan7@gmail.com" },
+    { icon: Phone, text: "+1 (562) 310-1189" },
+  ];
+
+  const socialLinks = [
+    { href: "https://linkedin.com", icon: Linkedin, label: "LinkedIn" },
+    { href: "https://instagram.com", icon: Instagram, label: "Instagram" },
+    { href: "https://facebook.com", icon: Facebook, label: "Facebook" },
+  ];
+
   return (
-    <footer className="bg-gray-800 text-white py-8 px-4 sm:px-6 lg:px-20">
+    <footer className="bg-blue-900 text-white py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col lg:flex-row justify-between items-start space-y-8 lg:space-y-0">
-          {/* Left Side: Logo */}
-          <div className="flex items-center space-x-2 w-full lg:w-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* Logo and Company Info */}
+          <div className="flex flex-col items-center md:items-start">
             <Image
               src="/ksvn.png"
-              alt="Company Logo"
+              alt="WebNova AI Logo"
               width={160}
               height={150}
-              className="bg-gray-800 mt-1"
+              className="bg-white rounded-lg p-2"
             />
+            <p className="mt-4 text-sm text-blue-200 text-center md:text-left">
+              Turning visions into digital realities
+            </p>
           </div>
 
-          {/* Mobile: Website (Left) and Contact Us (Right) */}
-          <div className="flex flex-row lg:hidden w-full justify-between">
-            {/* Website Navigation Links */}
-            <div className="flex flex-col space-y-2 text-left">
-              <h3 className="text-2xl font-medium">Website</h3>
-              {["Home", "About", "Our Services", "Blogs"].map((item) => (
-                <a
-                  key={item}
-                  href={`#${item.toLowerCase().replace(" ", "-")}`}
-                  className="hover:text-purple-600 text-lg transition duration-700 ease-in-out"
+          {/* Navigation Links */}
+          <div className="flex flex-col items-center md:items-start">
+            <h3 className="text-xl font-semibold mb-4 text-blue-300">
+              Quick Links
+            </h3>
+            <nav className="flex flex-col space-y-2">
+              {navItems.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className="flex items-center hover:text-blue-300 transition duration-300"
                 >
-                  {item}
-                </a>
+                  <item.icon className="w-5 h-5 mr-2" />
+                  <span>{item.name}</span>
+                </Link>
               ))}
-            </div>
-
-            {/* Contact Information */}
-            <div className="text-right">
-              <h3 className="text-2xl font-medium">Contact Us</h3>
-              <p className="hover:text-purple-600 text-lg transition duration-700 ease-in-out">
-                Sacramento, CA
-              </p>
-              <p className="hover:text-purple-600 text-lg transition duration-700 ease-in-out">
-                bhattaishan7@gmail.com
-              </p>
-              <p className="hover:text-purple-600 text-lg transition duration-700 ease-in-out">
-                +1 (562) 310-1189
-              </p>
-            </div>
+            </nav>
           </div>
 
-          {/* Desktop: Center Navigation Links */}
-          <div className="hidden lg:flex flex-col space-y-2 text-center">
-            <h3 className="text-3xl font-medium">Website</h3>
-            {["Home", "About", "Our Services", "Blogs"].map((item) => (
-              <a
-                key={item}
-                href={`#${item.toLowerCase().replace(" ", "-")}`}
-                className="hover:text-purple-600 text-xl transition duration-700 ease-in-out"
-              >
-                {item}
-              </a>
+          {/* Contact Information */}
+          <div className="flex flex-col items-center md:items-start">
+            <h3 className="text-xl font-semibold mb-4 text-blue-300">
+              Contact Us
+            </h3>
+            {contactInfo.map((item, index) => (
+              <p key={index} className="flex items-center mb-2">
+                <item.icon className="w-5 h-5 mr-2 text-blue-300" />
+                <span>{item.text}</span>
+              </p>
             ))}
           </div>
 
-          {/* Desktop: Right Side Contact Information */}
-          <div className="hidden lg:block text-right">
-            <h3 className="text-3xl font-medium">Contact Us</h3>
-            <p className="hover:text-purple-600 text-xl transition duration-700 ease-in-out">
-              Sacramento, California
-            </p>
-            <p className="hover:text-purple-600 text-xl transition duration-700 ease-in-out">
-              Email: bhattaishan7@gmail.com
-            </p>
-            <p className="hover:text-purple-600 text-xl transition duration-700 ease-in-out">
-              Phone: +1 (562) 310-1189
-            </p>
+          {/* Social Links and Newsletter */}
+          <div className="flex flex-col items-center md:items-start">
+            <h3 className="text-xl font-semibold mb-4 text-blue-300">
+              Connect With Us
+            </h3>
+            <div className="flex space-x-4 mb-4">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white hover:text-blue-300 transition duration-300"
+                  aria-label={social.label}
+                >
+                  <social.icon className="w-6 h-6" />
+                </a>
+              ))}
+            </div>
+            <form className="w-full max-w-sm">
+              <div className="flex items-center border-b border-blue-500 py-2">
+                <input
+                  className="appearance-none bg-transparent border-none w-full text-white mr-3 py-1 px-2 leading-tight focus:outline-none"
+                  type="text"
+                  placeholder="Enter your email"
+                  aria-label="Email for newsletter"
+                />
+                <button
+                  className="flex-shrink-0 bg-blue-500 hover:bg-blue-700 border-blue-500 hover:border-blue-700 text-sm border-4 text-white py-1 px-2 rounded"
+                  type="button"
+                >
+                  Subscribe
+                </button>
+              </div>
+            </form>
           </div>
         </div>
 
-        {/* Divider Line and Footer Text */}
-        <hr className="my-8 border-gray-700" />
-        <p className="text-center text-gray-400 mt-10">
-          © 2024 WebNova AI @ California. All rights reserved.
-        </p>
-
-        {/* Social Media Icons */}
-        <div className="flex justify-center lg:justify-end space-x-6 mt-4">
-          {[
-            {
-              href: "https://linkedin.com",
-              icon: faLinkedin,
-              label: "LinkedIn",
-            },
-            {
-              href: "https://instagram.com",
-              icon: faInstagram,
-              label: "Instagram",
-            },
-            {
-              href: "https://facebook.com",
-              icon: faFacebook,
-              label: "Facebook",
-            },
-          ].map((social) => (
-            <a
-              key={social.label}
-              href={social.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-400 hover:text-purple-600 transition duration-300"
-              aria-label={social.label}
+        {/* Divider Line and Copyright */}
+        <hr className="my-8 border-blue-800" />
+        <div className="flex flex-col md:flex-row justify-between items-center">
+          <p className="text-center text-blue-200 text-sm">
+            © 2024 WebNova AI @ California. All rights reserved.
+          </p>
+          <div className="flex space-x-4 mt-4 md:mt-0">
+            <Link
+              href="/privacy-policy"
+              className="text-sm text-blue-200 hover:text-white"
             >
-              <FontAwesomeIcon icon={social.icon} size="2x" />
-            </a>
-          ))}
+              Privacy Policy
+            </Link>
+            <Link
+              href="/terms-of-service"
+              className="text-sm text-blue-200 hover:text-white"
+            >
+              Terms of Service
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
