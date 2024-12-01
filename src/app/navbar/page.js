@@ -3,292 +3,179 @@
 import * as React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
-const components = [
+const navItems = [
+  { name: "Home", href: "/" },
   {
-    title: "Web Development",
-    href: "/services/web-development",
-    description:
-      "Create stunning and functional websites tailored to your needs.",
+    name: "About Us",
+    href: "#",
+    dropdownItems: [
+      { name: "Our Story", href: "/about/story", icon: "📖" },
+      { name: "Team", href: "/about/team", icon: "👥" },
+      { name: "Mission & Values", href: "/about/mission", icon: "🎯" },
+    ],
   },
   {
-    title: "Mobile App Development",
-    href: "/services/mobile-app-development",
-    description:
-      "Build powerful mobile applications for iOS and Android platforms.",
+    name: "Career",
+    href: "#",
+    dropdownItems: [
+      { name: "Open Positions", href: "/career/positions", icon: "💼" },
+      { name: "Internships", href: "/career/internships", icon: "🎓" },
+      { name: "Life at KSVA", href: "/career/life-at-ksva", icon: "🌟" },
+    ],
   },
   {
-    title: "Cloud Solutions",
-    href: "/services/cloud-solutions",
-    description:
-      "Leverage cloud technology to scale your business efficiently.",
+    name: "Resources",
+    href: "#",
+    dropdownItems: [
+      { name: "Blog", href: "/blog", icon: "✍️" },
+      { name: "Case Studies", href: "/case-studies", icon: "📊" },
+      { name: "Whitepapers", href: "/whitepapers", icon: "📄" },
+      { name: "Webinars", href: "/webinars", icon: "🎥" },
+      { name: "FAQ", href: "/faq", icon: "❓" },
+    ],
   },
 ];
 
-const navItemStyles = `
-  inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-slate-100/50 data-[state=open]:bg-slate-100/50 relative
-  before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-blue-600 before:transition-all before:duration-700 hover:before:w-full
-  text-black hover:text-blue-600 transition-all duration-700 ease-out text-xl
-`;
+export function Navbar() {
+  const [isOpen, setIsOpen] = React.useState(false);
 
-export function NavbarItems() {
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-blue-200 bg-white">
-      <div className="container flex h-16 items-center justify-between">
-        <Link href="/" className="flex items-center space-x-2">
-          <Image
-            src="/ksvn.png?height=32&width=32"
-            alt="KSVA Tech Logo"
-            width={100}
-            height={100}
-          />
-          <span className="hidden font-bold text-blue-600 sm:inline-block">
-            KSVA Tech
-          </span>
-        </Link>
-        <NavigationMenu className="hidden md:flex">
-          <NavigationMenuList className="flex space-x-4">
-            <NavigationMenuItem>
-              <Link href="/" legacyBehavior passHref>
-                <NavigationMenuLink className={navItemStyles}>
-                  Home
-                </NavigationMenuLink>
-              </Link>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuTrigger className={navItemStyles}>
-                Services
-              </NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-                  <li className="row-span-3">
-                    <NavigationMenuLink asChild>
-                      <a
-                        className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-blue-500 to-blue-700 p-6 no-underline outline-none focus:shadow-md "
-                        href="/services"
+    <nav className="bg-white shadow-lg sticky top-0 z-50 transition-shadow duration-300">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between h-20">
+          <div className="flex items-center">
+            <Link href="/" className="flex-shrink-0 flex items-center">
+              <Image
+                className="h-24 w-auto"
+                src="/ksvn.png"
+                alt="KSVA Logo"
+                width={150}
+                height={150}
+              />
+              <span className="ml-2 text-xl font-bold text-gray-800">KSVA</span>
+            </Link>
+          </div>
+          <div className="hidden sm:ml-6 sm:flex sm:items-center">
+            {navItems.map((item) => (
+              <React.Fragment key={item.name}>
+                {item.dropdownItems ? (
+                  <DropdownMenu>
+                    <DropdownMenuTrigger asChild>
+                      <Button
+                        variant="ghost"
+                        className="text-gray-600 hover:text-blue-600 transition-colors duration-200 group"
                       >
-                        <div className="mt-4 text-lg font-medium text-white ">
-                          Our Services
-                        </div>
-                        <p className="text-sm leading-tight text-white/90">
-                          Explore our range of IT solutions tailored for your
-                          business needs.
-                        </p>
-                      </a>
-                    </NavigationMenuLink>
-                  </li>
-                  {components.map((component) => (
-                    <ListItem
-                      className="hover:bg-blue-200"
-                      key={component.title}
-                      title={component.title}
-                      href={component.href}
-                    >
-                      {component.description}
-                    </ListItem>
-                  ))}
-                </ul>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuTrigger className={navItemStyles}>
-                Company
-              </NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="grid gap-3 p-6 md:w-[400px] md:grid-cols-2 lg:w-[500px] ">
-                  <ListItem
-                    title="About Us"
-                    href="/company/about"
-                    className="hover:bg-blue-200"
+                        {item.name}
+                        <ChevronDown className="ml-1 h-4 w-4 transition-transform duration-200 group-hover:rotate-180" />
+                      </Button>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent className="w-56 bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5">
+                      {item.dropdownItems.map((dropdownItem) => (
+                        <DropdownMenuItem key={dropdownItem.name} asChild>
+                          <Link
+                            href={dropdownItem.href}
+                            className="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 transition-colors duration-150"
+                          >
+                            <span className="mr-2">{dropdownItem.icon}</span>
+                            {dropdownItem.name}
+                          </Link>
+                        </DropdownMenuItem>
+                      ))}
+                    </DropdownMenuContent>
+                  </DropdownMenu>
+                ) : (
+                  <Link
+                    href={item.href}
+                    className="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 hover:bg-blue-50"
                   >
-                    Learn about our mission, vision, and values.
-                  </ListItem>
-                  <ListItem
-                    title="Team"
-                    href="/company/team"
-                    className="hover:bg-blue-200"
-                  >
-                    Meet the experts behind KSVA Tech.
-                  </ListItem>
-                  <ListItem
-                    title="Careers"
-                    href="/company/careers"
-                    className="hover:bg-blue-200"
-                  >
-                    Join our team and grow your career in tech.
-                  </ListItem>
-                </ul>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuTrigger className={navItemStyles}>
-                Resources
-              </NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="grid gap-3 p-6 md:w-[400px] md:grid-cols-2 lg:w-[500px]">
-                  <ListItem
-                    title="Documentation"
-                    href="/resources/documentation"
-                    className="hover:bg-blue-200"
-                  >
-                    Comprehensive guides for our products and services.
-                  </ListItem>
-                  <ListItem
-                    title="Tutorials"
-                    href="/resources/tutorials"
-                    className="hover:bg-blue-200"
-                  >
-                    Step-by-step tutorials to help you get started.
-                  </ListItem>
-                  <ListItem
-                    title="Case Studies"
-                    href="/resources/case-studies"
-                    className="hover:bg-blue-200"
-                  >
-                    Real-world examples of our solutions in action.
-                  </ListItem>
-                </ul>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <Link href="/blog" legacyBehavior passHref>
-                <NavigationMenuLink className={navItemStyles}>
-                  Blog
-                </NavigationMenuLink>
-              </Link>
-            </NavigationMenuItem>
-          </NavigationMenuList>
-        </NavigationMenu>
-        <div className="flex items-center space-x-4">
-          <Link href="/crm/dashboard">
-            {" "}
-            <Button className="bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-600 varian">
-              For Business
+                    {item.name}
+                  </Link>
+                )}
+              </React.Fragment>
+            ))}
+          </div>
+          <div className="hidden sm:ml-6 sm:flex sm:items-center">
+            <Button
+              asChild
+              className="bg-blue-600 text-white hover:bg-blue-700 transition-colors duration-200"
+            >
+              <Link href="/business">For Business</Link>
             </Button>
-          </Link>
-          <Sheet>
-            <SheetTrigger asChild>
-              <Button
-                variant="ghost"
-                className="px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 md:hidden"
-              >
-                <Menu className="h-6 w-6" />
-                <span className="sr-only">Toggle Menu</span>
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="right">
-              <MobileNav />
-            </SheetContent>
-          </Sheet>
+          </div>
+          <div className="-mr-2 flex items-center sm:hidden">
+            <Button
+              variant="ghost"
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500 transition-colors duration-200"
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              <span className="sr-only">Open main menu</span>
+              {isOpen ? (
+                <X className="block h-6 w-6" aria-hidden="true" />
+              ) : (
+                <Menu className="block h-6 w-6" aria-hidden="true" />
+              )}
+            </Button>
+          </div>
         </div>
       </div>
-    </header>
-  );
-}
 
-const ListItem = React.forwardRef(
-  ({ className, title, children, ...props }, ref) => {
-    return (
-      <li>
-        <NavigationMenuLink asChild>
-          <a
-            ref={ref}
-            className={cn(
-              "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-slate-100 focus:bg-slate-100",
-              className
-            )}
-            {...props}
-          >
-            <div className="text-sm font-medium leading-none">{title}</div>
-            <p className="line-clamp-2 text-sm leading-snug text-slate-500">
-              {children}
-            </p>
-          </a>
-        </NavigationMenuLink>
-      </li>
-    );
-  }
-);
-ListItem.displayName = "ListItem";
-
-function MobileNav() {
-  return (
-    <div className="flex flex-col space-y-4">
-      <Link href="/" className="text-lg font-semibold">
-        Home
-      </Link>
-      <Accordion type="single" collapsible className="w-full">
-        <AccordionItem value="services">
-          <AccordionTrigger>Services</AccordionTrigger>
-          <AccordionContent>
-            <div className="flex flex-col space-y-2">
-              <Link href="/services/web-development" className="text-sm">
-                Web Development
-              </Link>
-              <Link href="/services/mobile-app-development" className="text-sm">
-                Mobile App Development
-              </Link>
-              <Link href="/services/cloud-solutions" className="text-sm">
-                Cloud Solutions
-              </Link>
-            </div>
-          </AccordionContent>
-        </AccordionItem>
-        <AccordionItem value="company">
-          <AccordionTrigger>Company</AccordionTrigger>
-          <AccordionContent>
-            <div className="flex flex-col space-y-2">
-              <Link href="/company/about" className="text-sm">
-                About Us
-              </Link>
-              <Link href="/company/team" className="text-sm">
-                Team
-              </Link>
-              <Link href="/company/careers" className="text-sm">
-                Careers
-              </Link>
-            </div>
-          </AccordionContent>
-        </AccordionItem>
-        <AccordionItem value="resources">
-          <AccordionTrigger>Resources</AccordionTrigger>
-          <AccordionContent>
-            <div className="flex flex-col space-y-2">
-              <Link href="/resources/documentation" className="text-sm">
-                Documentation
-              </Link>
-              <Link href="/resources/tutorials" className="text-sm">
-                Tutorials
-              </Link>
-              <Link href="/resources/case-studies" className="text-sm">
-                Case Studies
-              </Link>
-            </div>
-          </AccordionContent>
-        </AccordionItem>
-      </Accordion>
-      <Link href="/blog" className="text-lg font-semibold">
-        Blog
-      </Link>
-    </div>
+      {/* Mobile menu */}
+      <div
+        className={cn(
+          "sm:hidden transition-all duration-300 ease-in-out overflow-hidden",
+          isOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
+        )}
+      >
+        <div className="px-2 pt-2 pb-3 space-y-1">
+          {navItems.map((item) => (
+            <React.Fragment key={item.name}>
+              {item.dropdownItems ? (
+                <div className="space-y-1">
+                  <Button
+                    variant="ghost"
+                    className="w-full text-left justify-start text-gray-600 hover:text-blue-600 transition-colors duration-200"
+                  >
+                    {item.name}
+                  </Button>
+                  <div className="pl-4 space-y-1">
+                    {item.dropdownItems.map((dropdownItem) => (
+                      <Link
+                        key={dropdownItem.name}
+                        href={dropdownItem.href}
+                        className="flex items-center px-3 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-md transition-colors duration-150"
+                      >
+                        <span className="mr-2">{dropdownItem.icon}</span>
+                        {dropdownItem.name}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <Link
+                  href={item.href}
+                  className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-blue-600 hover:bg-blue-50 transition-colors duration-200"
+                >
+                  {item.name}
+                </Link>
+              )}
+            </React.Fragment>
+          ))}
+          <div className="mt-4">
+            <Link href="/business">For Business</Link>
+          </div>
+        </div>
+      </div>
+    </nav>
   );
 }

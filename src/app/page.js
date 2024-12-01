@@ -14,21 +14,20 @@ import Role from "./role/page";
 import Service from "./services/page";
 
 import Video from "./video/page";
-import { NavbarItems } from "./navbar/page";
+import { Navbar } from "./navbar/page";
 
 const Layout = () => {
   return (
     <div>
-      <NavbarItems />
+      {/* Add your components here */}
+      <Navbar />
       <Video />
-
       <BackgroundBoxesDemo />
       <AboutUs />
       <SparklesPreview />
       <Service />
       <Role />
       <Teams />
-
       <Brand />
       <Contact />
       <Footer />
