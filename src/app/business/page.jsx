@@ -248,11 +248,11 @@ export default function BusinessLandingPage() {
           modules={[Navigation]}
           navigation
           spaceBetween={40}
-          slidesPerView={2}
+          slidesPerView={1}
           breakpoints={{
             640: { slidesPerView: 1 },
             768: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
+            1024: { slidesPerView: 2 },
           }}
           className="mySwiper"
         >
