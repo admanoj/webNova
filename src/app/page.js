@@ -14,21 +14,25 @@ import Role from "./role/page";
 import Service from "./services/page";
 
 import Video from "./video/page";
-import { Navbar } from "./navbar/page";
+import Navbar from "./navbar/page";
 
 const Layout = () => {
   return (
     <div>
       {/* Add your components here */}
-      <Navbar />
+      <div className="sticky top-0 z-50">
+        {" "}
+        <Navbar />
+      </div>
       <Video />
       <BackgroundBoxesDemo />
       <AboutUs />
-      <SparklesPreview />
+
       <Service />
-      <Role />
-      <Teams />
+      {/* <Role /> */}
+      {/* <Teams /> */}
       <Brand />
+      <SparklesPreview />
       <Contact />
       <Footer />
     </div>

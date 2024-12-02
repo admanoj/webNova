@@ -12,7 +12,7 @@ const Video = () => {
         muted
         loop
         playsInline
-        className="absolute inset-0 h-full w-full object-cover"
+        className="absolute inset-0 h-full w-full object-cover "
       >
         <source src="/ksva.mp4" type="video/mp4" />
         Your browser does not support the video tag.

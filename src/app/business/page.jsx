@@ -29,11 +29,12 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
+import Footer from "../footer/page";
+import Navbar from "../navbar/page";
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "Required" }),
@@ -98,11 +99,17 @@ export default function BusinessLandingPage() {
 
   function onSubmit(values) {
     console.log(values);
-    
   }
-
+  <Image
+    src="/ksvn.png"
+    alt="WebNova AI Logo"
+    width={160}
+    height={150}
+    className="bg-white rounded-lg p-2"
+  />;
   return (
     <div className="container mx-auto px-4 py-8 space-y-12">
+      <Navbar />
       <section className="max-w-4xl mx-auto text-center">
         <h1 className="text-4xl font-bold mb-4">
           Empowering Your Business Success
@@ -284,6 +291,7 @@ export default function BusinessLandingPage() {
           ))}
         </Swiper>
       </section>
+      <Footer />
     </div>
   );
 }

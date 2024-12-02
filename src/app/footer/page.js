@@ -15,6 +15,7 @@ import {
   Instagram,
   Facebook,
 } from "lucide-react";
+import Navbar from "../navbar/page";
 
 export default function Footer() {
   const navItems = [
@@ -49,6 +50,7 @@ export default function Footer() {
               height={150}
               className="bg-white rounded-lg p-2"
             />
+
             <p className="mt-4 text-sm text-blue-200 text-center md:text-left">
               Turning visions into digital realities
             </p>

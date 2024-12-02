@@ -4,7 +4,7 @@ import { SparklesCore } from "@/components/ui/sparkles";
 
 export function SparklesPreview() {
   return (
-    <div className="h-[25rem] w-full bg-black flex flex-col items-center justify-center overflow-hidden rounded-md">
+    <div className="h-[25rem] w-full bg-black flex flex-col items-center justify-center overflow-hidden ">
       <h1 className="text-3xl md:text-4xl lg:text-7xl font-bold text-center relative z-20 whitespace-nowrap bg-gradient-to-r from-blue-500 to-white text-transparent bg-clip-text">
         How can we help you?
       </h1>
