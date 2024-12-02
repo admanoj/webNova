@@ -29,6 +29,12 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import { Navigation } from "swiper/modules";
+
 const formSchema = z.object({
   name: z.string().min(2, { message: "Required" }),
   email: z.string().email({ message: "Invalid email" }),
@@ -43,31 +49,37 @@ const teamMembers = [
     name: "Manoj Adhikari",
     role: "Frontend Developer",
     expertise: "React, Next.js",
+    image: "/ishan.jpg",
   },
   {
     name: "Prasanna Wagle",
     role: "Project Management, React Developer",
     expertise: "React, Project Management",
+    image: "/prasanna.jpg",
   },
   {
     name: "Ritika Shrestha",
     role: "Digital Marketing Specialist",
     expertise: "SEO, Content Marketing",
+    image: "/ishan.jpg",
   },
   {
     name: "Rajnish Adhikari",
     role: "Data Analyst",
     expertise: "Python, R, Tableau",
+    image: "/rajnish.jpg",
   },
   {
     name: "Ritik Gaire",
     role: "Backend Developer",
     expertise: "Node.js, Express, MongoDB",
+    image: "/ishan.jpg",
   },
   {
     name: "Sofiya Pandey",
     role: "UI/UX Designer",
     expertise: "Sketch, figma",
+    image: "/sofiya.jpg",
   },
 ];
 
@@ -86,8 +98,7 @@ export default function BusinessLandingPage() {
 
   function onSubmit(values) {
     console.log(values);
-    // In a real application, you would handle form submission here
-    // For now, we'll just log the values
+    
   }
 
   return (
@@ -99,10 +110,7 @@ export default function BusinessLandingPage() {
         <p className="text-lg text-gray-700 leading-relaxed">
           Welcome to our comprehensive business solutions hub. At [Your Company
           Name], we're dedicated to propelling your organization towards
-          unprecedented growth and efficiency. Our team of seasoned experts
-          brings a wealth of experience across various domains, ensuring that we
-          can address your unique challenges with innovative, tailored
-          solutions.
+          unprecedented growth and efficiency.
         </p>
       </section>
 
@@ -236,23 +244,45 @@ export default function BusinessLandingPage() {
           Meet our team of experts who bring a wealth of experience across
           various domains.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <Swiper
+          modules={[Navigation]}
+          navigation
+          spaceBetween={40}
+          slidesPerView={2}
+          breakpoints={{
+            640: { slidesPerView: 1 },
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+          }}
+          className="mySwiper"
+        >
           {teamMembers.map((member, index) => (
-            <Card key={index} className="flex flex-col justify-between">
-              <CardHeader>
-                <CardTitle className="text-xl font-semibold">
-                  {member.name}
-                </CardTitle>
-                <CardDescription>{member.role}</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-gray-600">
-                  Expertise: {member.expertise}
-                </p>
-              </CardContent>
-            </Card>
+            <SwiperSlide key={index}>
+              <Card className="flex flex-col justify-between h-69 p-4 shadow-md border border-gray-200">
+                <CardHeader>
+                  <CardTitle className="flex justify-center text-xl font-semibold">
+                    {member.name}
+                  </CardTitle>
+                  <CardDescription className="flex justify-center text-gray-500">
+                    {member.role}
+                  </CardDescription>
+                </CardHeader>
+                <div className="flex justify-center items-center mb-4">
+                  <img
+                    src={member.image}
+                    alt={`${member.name} portrait`}
+                    className="w-24 h-24 rounded-full object-cover"
+                  />
+                </div>
+                <CardContent>
+                  <p className="flex justify-center text-sm text-gray-600 max-w-xs mx-auto">
+                    Expertise: {member.expertise}
+                  </p>
+                </CardContent>
+              </Card>
+            </SwiperSlide>
           ))}
-        </div>
+        </Swiper>
       </section>
     </div>
   );
