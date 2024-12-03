@@ -115,9 +115,9 @@ export default function BusinessLandingPage() {
           Empowering Your Business Success
         </h1>
         <p className="text-lg text-gray-700 leading-relaxed">
-          Welcome to our comprehensive business solutions hub. At [Your Company
-          Name], we're dedicated to propelling your organization towards
-          unprecedented growth and efficiency.
+          Welcome to our comprehensive business solutions hub. At KSVA TECH,
+          we're dedicated to propelling your organization towards unprecedented
+          growth and efficiency.
         </p>
       </section>
 

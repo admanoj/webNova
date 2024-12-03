@@ -32,7 +32,11 @@ export default function Footer() {
   ];
 
   const socialLinks = [
-    { href: "https://linkedin.com", icon: Linkedin, label: "LinkedIn" },
+    {
+      href: "https://www.linkedin.com/company/ksva-tech-solutions/posts/?feedView=all",
+      icon: Linkedin,
+      label: "LinkedIn",
+    },
     { href: "https://instagram.com", icon: Instagram, label: "Instagram" },
     { href: "https://facebook.com", icon: Facebook, label: "Facebook" },
   ];
