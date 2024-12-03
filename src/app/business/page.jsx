@@ -109,7 +109,7 @@ export default function BusinessLandingPage() {
   />;
   return (
     <div className="container mx-auto px-4 py-8 space-y-12">
-      <Navbar />
+      
       <section className="max-w-4xl mx-auto text-center">
         <h1 className="text-4xl font-bold mb-4">
           Empowering Your Business Success
@@ -245,7 +245,7 @@ export default function BusinessLandingPage() {
         </CardContent>
       </Card>
 
-      <section className="w-full max-w-4xl mx-auto">
+      <section className="w-full max-w-4xl mx-auto pb-[7%]">
         <h2 className="text-3xl font-bold mb-6 text-center">Our Expertise</h2>
         <p className="text-lg text-gray-700 mb-8 text-center">
           Meet our team of experts who bring a wealth of experience across
@@ -291,7 +291,7 @@ export default function BusinessLandingPage() {
           ))}
         </Swiper>
       </section>
-      <Footer />
+      
     </div>
   );
 }

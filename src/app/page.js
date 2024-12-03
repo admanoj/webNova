@@ -20,10 +20,10 @@ const Layout = () => {
   return (
     <div>
       {/* Add your components here */}
-      <div className="sticky top-0 z-50">
+      {/* <div className="sticky top-0 z-50">
         {" "}
-        <Navbar />
-      </div>
+        
+      </div> */}
       <Video />
       <BackgroundBoxesDemo />
       <AboutUs />
@@ -34,7 +34,7 @@ const Layout = () => {
       <Brand />
       <SparklesPreview />
       <Contact />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };
