@@ -20,24 +20,24 @@ const navItems = [
   { title: "Home", href: "/" },
   {
     title: "About Us",
-    href: "/about",
-    content: [
-      {
-        title: "Our Story",
-        href: "/about/story",
-        description: "Learn about our journey and milestones",
-      },
-      {
-        title: "Team",
-        href: "/about/team",
-        description: "Meet the people behind our success",
-      },
-      {
-        title: "Vision & Mission",
-        href: "/about/vision",
-        description: "Discover what drives us forward",
-      },
-    ],
+    href: "/aboutTeam",
+    // content: [
+    //   {
+    //     title: "Our Story",
+    //     href: "/about/story",
+    //     description: "Learn about our journey and milestones",
+    //   },
+    //   {
+    //     title: "Team",
+    //     href: "/about/team",
+    //     description: "Meet the people behind our success",
+    //   },
+    //   {
+    //     title: "Vision & Mission",
+    //     href: "/about/vision",
+    //     description: "Discover what drives us forward",
+    //   },
+    // ],
   },
   {
     title: "Services",
@@ -45,12 +45,12 @@ const navItems = [
     content: [
       {
         title: "IT Consulting",
-        href: "/services/consulting",
+        href: "/dropdown/consulting",
         description: "Expert advice for your IT needs",
       },
       {
         title: "Software Development",
-        href: "/services/development",
+        href: "/dropdown/software",
         description: "Custom software solutions",
       },
       {
@@ -72,22 +72,22 @@ const navItems = [
     content: [
       {
         title: "Blog",
-        href: "/resources/blog",
+        href: "/dropdown/blog",
         description: "Read our latest articles and insights",
       },
       {
         title: "Case Studies",
-        href: "/resources/case-studies",
+        href: "/dropdown/caseStudies",
         description: "Explore our client success stories",
       },
       {
         title: "Whitepapers",
-        href: "/resources/whitepapers",
+        href: "/dropdown/whitepapers",
         description: "In-depth research and analysis",
       },
       {
         title: "FAQ",
-        href: "/resources/faq",
+        href: "/dropdown/faq",
         description: "Answers to commonly asked questions",
       },
     ],
@@ -166,7 +166,7 @@ export function NavbarItems() {
         <div className="flex items-center space-x-4">
           <Link href="/business">
             {" "}
-            <Button className="bg-blue-600 text-sm text-white hover:bg-blue-700">
+            <Button className="hidden md:inline-flex bg-gradient-to-r from-blue-600 to-blue-800 text-white hover:from-blue-700 hover:to-blue-900">
               For Business
             </Button>
           </Link>

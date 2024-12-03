@@ -37,12 +37,16 @@ export default function Footer() {
       icon: Linkedin,
       label: "LinkedIn",
     },
-    { href: "https://instagram.com", icon: Instagram, label: "Instagram" },
+    {
+      href: "https://www.instagram.com/ksvatechsolutions/?igsh=Y29tZmtqNzZnN3hk",
+      icon: Instagram,
+      label: "Instagram",
+    },
     { href: "https://facebook.com", icon: Facebook, label: "Facebook" },
   ];
 
   return (
-    <footer className="bg-blue-900 text-white py-12 px-4 sm:px-6 lg:px-8">
+    <footer className="bg-gray-900 text-white py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Logo and Company Info */}
@@ -134,7 +138,7 @@ export default function Footer() {
         <hr className="my-8 border-blue-800" />
         <div className="flex flex-col md:flex-row justify-between items-center">
           <p className="text-center text-blue-200 text-sm">
-            © 2024 WebNova AI @ California. All rights reserved.
+            © 2024 Ksva Tech AI @ California. All rights reserved.
           </p>
           <div className="flex space-x-4 mt-4 md:mt-0">
             <Link
