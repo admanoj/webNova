@@ -374,12 +374,15 @@ export function NavbarItems() {
           </Link>
           <Sheet>
             <SheetTrigger asChild>
-              <Button variant="outline" size="icon" className="lg:hidden">
+              <Button variant="outline" size="icon" className="lg:hidden ">
                 <Menu className="h-5 w-5" />
                 <VisuallyHidden>Toggle menu</VisuallyHidden>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+            <SheetContent
+              side="right"
+              className="w-[300px] sm:w-[400px] bg-gray-300"
+            >
               <VisuallyHidden>
                 <DialogTitle>Navigation Menu</DialogTitle>
               </VisuallyHidden>
