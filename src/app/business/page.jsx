@@ -33,8 +33,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
-import Footer from "../footer/page";
-import Navbar from "../navbar/page";
+import Image from "next/image";
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "Required" }),
@@ -109,7 +108,6 @@ export default function BusinessLandingPage() {
   />;
   return (
     <div className="container mx-auto px-4 py-8 space-y-12">
-      
       <section className="max-w-4xl mx-auto text-center">
         <h1 className="text-4xl font-bold mb-4">
           Empowering Your Business Success
@@ -291,7 +289,6 @@ export default function BusinessLandingPage() {
           ))}
         </Swiper>
       </section>
-      
     </div>
   );
 }

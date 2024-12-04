@@ -50,7 +50,7 @@ const Video = () => {
               </button>
             </Link>
             <Link href="#contact">
-              <button className="px-8 py-3 border-2 border-blue-400 text-white rounded-lg font-semibold hover:bg-white hover:text-black hover:border-blue-600 transition duration-300">
+              <button className="px-8 py-3 border-2 border-blue-400 text-white rounded-lg font-semibold hover:bg-blue-600 hover:text-black hover:border-blue-600 transition duration-300">
                 Contact Us
               </button>
             </Link>
