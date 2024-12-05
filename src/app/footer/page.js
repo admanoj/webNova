@@ -20,7 +20,7 @@ import Navbar from "../navbar/page";
 export default function Footer() {
   const navItems = [
     { name: "Home", href: "#home", icon: Home },
-    { name: "about", href: "aboutTeam", icon: Info },
+    { name: "about", href: "/aboutTeam", icon: Info },
     { name: "Our Services", href: "/services", icon: Briefcase },
     { name: "Blogs", href: "/dropdown/blog/", icon: BookOpen },
   ];
