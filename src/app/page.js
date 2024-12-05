@@ -15,6 +15,7 @@ import Service from "./services/page";
 
 import Video from "./video/page";
 import Navbar from "./navbar/page";
+import Manoj from "./manojnav/page";
 
 const Layout = () => {
   return (
@@ -24,6 +25,7 @@ const Layout = () => {
         {" "}
         
       </div> */}
+      <Manoj />
       <Video />
       <BackgroundBoxesDemo />
       <AboutUs />

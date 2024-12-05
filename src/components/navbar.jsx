@@ -379,10 +379,7 @@ export function NavbarItems() {
                 <VisuallyHidden>Toggle menu</VisuallyHidden>
               </Button>
             </SheetTrigger>
-            <SheetContent
-              side="right"
-              className="w-[300px] sm:w-[400px] bg-gray-300"
-            >
+            <SheetContent side="right" className="w-[300px] sm:w-[400px] ">
               <VisuallyHidden>
                 <DialogTitle>Navigation Menu</DialogTitle>
               </VisuallyHidden>
