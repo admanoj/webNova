@@ -619,7 +619,7 @@ export function NavbarItems() {
               <VisuallyHidden>
                 <DialogTitle>Navigation Menu</DialogTitle>
               </VisuallyHidden>
-              <nav className="flex flex-col space-y-6">
+              <nav className="flex flex-col space-y-6 ">
                 <Link href="/" className="flex items-center mb-6">
                   <Image
                     src="/ksvn.png"
