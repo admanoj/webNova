@@ -41,20 +41,6 @@ const formSchema = z.object({
 
 const teamMembers = [
   {
-    name: "Vasavi Thandu",
-    title: "Chief Executive Officer",
-    description:
-      "Visionary leader with over 15 years of experience in tech industry. Drives company strategy, fosters innovation, and ensures sustainable growth.",
-    image: "/vasavi.jpg?height=400&width=400",
-  },
-  {
-    name: "Ishan Bhatta",
-    title: "Chief Operating Officer",
-    description:
-      "Seasoned executive overseeing daily operations. Implements strategic initiatives and optimizes business processes for maximum efficiency.",
-    image: "/ishan.jpg?height=400&width=400",
-  },
-  {
     name: "Rajnish Adhikari",
     title: "Operations Manager",
     description:
@@ -82,13 +68,7 @@ const teamMembers = [
       "Creative strategist with a data-driven approach. Develops and implements comprehensive online marketing campaigns to boost brand visibility.",
     image: "/placeholder.svg?height=400&width=400",
   },
-  {
-    name: "Prasana Wagle",
-    title: "Project Manager",
-    description:
-      "Certified PMP with a track record of successful project deliveries. Ensures client satisfaction through effective communication and resource management.",
-    image: "/placeholder.svg?height=400&width=400",
-  },
+
   {
     name: "Sofia Pandey",
     title: "UI/UX Designer",
@@ -179,7 +159,7 @@ export default function BusinessLandingPage() {
           Empowering Your Business Success
         </h1>
         <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
-          Welcome to our comprehensive business solutions hub. At KSVA TECH,
+          Welcome to our comprehensive business solutions hub. At KSVA Tech,
           we're dedicated to propelling your organization towards unprecedented
           growth and efficiency.
         </p>

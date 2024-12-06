@@ -14,7 +14,7 @@ const teamMembers = [
     image: "/vasavi.jpg",
     fallback: "VT",
     description:
-      "Vasavi leads Ksva Tech with a vision for innovation and growth. With over 15 years of experience in the tech industry, she has been instrumental in driving the company's strategic direction and fostering a culture of excellence. Her leadership has been pivotal in establishing Ksva Tech as a leading force in delivering cutting-edge solutions to clients worldwide.",
+      "Vasavi leads KSVA Tech with a vision for innovation and growth. With over 15 years of experience in the tech industry, she has been instrumental in driving the company's strategic direction and fostering a culture of excellence. Her leadership has been pivotal in establishing Ksva Tech as a leading force in delivering cutting-edge solutions to clients worldwide.",
   },
   {
     name: "Ishan Bhatta",
@@ -22,7 +22,7 @@ const teamMembers = [
     image: "/ishan.jpg",
     fallback: "IB",
     description:
-      "Ishan oversees the day-to-day operations of Ksva Tech, ensuring seamless execution of projects and optimal resource allocation. His background in process optimization and team management has been crucial in scaling the company's operations while maintaining the highest standards of quality. Ishan's strategic approach has significantly improved operational efficiency across all departments.",
+      "Ishan oversees the day-to-day operations of  KSVA Tech, ensuring seamless execution of projects and optimal resource allocation. His background in process optimization and team management has been crucial in scaling the company's operations while maintaining the highest standards of quality. Ishan's strategic approach has significantly improved operational efficiency across all departments.",
     linkedinUrl: "https://www.linkedin.com/in/ishan-bhatta-85aa31161/",
   },
   {
@@ -31,7 +31,7 @@ const teamMembers = [
     image: "/shiva-prasad-kongari.jpg",
     fallback: "SK",
     description:
-      "Shiva spearheads Ksva Tech's technological innovations. With a deep understanding of emerging technologies and a track record of successful product developments, he guides our technical strategy and ensures that we remain at the forefront of the industry. His expertise in cloud architecture, AI, and data analytics has been key in developing our most groundbreaking solutions.",
+      "Shiva spearheads KSVA Tech's technological innovations. With a deep understanding of emerging technologies and a track record of successful product developments, he guides our technical strategy and ensures that we remain at the forefront of the industry. His expertise in cloud architecture, AI, and data analytics has been key in developing our most groundbreaking solutions.",
   },
   {
     name: "Rajnish Adhikari",
@@ -39,7 +39,7 @@ const teamMembers = [
     image: "/rajnish.jpg",
     fallback: "RA",
     description:
-      "Rajnish plays a crucial role in streamlining Ksva Tech's operational processes. His expertise in project management and resource optimization has significantly enhanced our delivery capabilities. Rajnish's commitment to continuous improvement has led to the implementation of best practices that have elevated our operational standards and client satisfaction levels.",
+      "Rajnish plays a crucial role in streamlining KSVA Tech's operational processes. His expertise in project management and resource optimization has significantly enhanced our delivery capabilities. Rajnish's commitment to continuous improvement has led to the implementation of best practices that have elevated our operational standards and client satisfaction levels.",
   },
 ];
 
@@ -62,7 +62,7 @@ const AboutTeam = () => {
               life.
             </p>
             <p className="text-gray-600">
-              At Ksva Tech, we've assembled a powerhouse team of 450+ industry
+              At KSVA Tech, we've assembled a powerhouse team of 450+ industry
               veterans, including seasoned founders, CTOs, visionary product
               designers, and elite engineers. Our decade-long journey has seen
               us successfully deliver over 100 groundbreaking products. We've
@@ -75,7 +75,7 @@ const AboutTeam = () => {
           <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-xl">
             <Image
               src="/innovation.avif"
-              alt="Innovation at Ksva Tech"
+              alt="Innovation at KSVA Tech"
               layout="fill"
               objectFit="cover"
               className="transition-transform duration-300 hover:scale-105"
@@ -101,7 +101,7 @@ const AboutTeam = () => {
               Dedicated to Your Success
             </p>
             <p className="text-gray-600">
-              At the heart of Ksva Tech is our unwavering focus on our clients'
+              At the heart of KSVA Tech is our unwavering focus on our clients'
               success. We're passionate about finding new ways to bring ideas to
               life, from concept to finished product. By using our expertise, we
               help our customers innovate faster and make their teams work

@@ -138,7 +138,7 @@ export default function Footer() {
         <hr className="my-8 border-blue-800" />
         <div className="flex flex-col md:flex-row justify-between items-center">
           <p className="text-center text-blue-200 text-sm">
-            © 2024 Ksva Tech AI @ California. All rights reserved.
+            © 2024 KSVA Tech AI @ California. All rights reserved.
           </p>
           <div className="flex space-x-4 mt-4 md:mt-0">
             <Link

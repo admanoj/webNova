@@ -1,128 +1,260 @@
 // "use client";
+
 // import React from "react";
 // import Image from "next/image";
+// import { Button } from "@/components/ui/button";
+// import { motion } from "framer-motion";
 
-// const Brand = () => {
+// const MovingBrands = () => {
+//   const brands = [
+//     "/brand-01.png",
+//     "/brand-02.png",
+//     "/brand-03.png",
+//     "/brand-04.png",
+//     "/brand-05.png",
+//     "/brand-06.png",
+//     "/brand-07.png",
+//     "/brand-08.png",
+//     "/brand-09.png",
+//     "/brand-10.png",
+//     "/brand-15.png",
+//     "/brand-16.png",
+//   ];
+
 //   return (
-//     <div className="flex flex-col items-center text-center p-6 bg-gray-50 rounded-lg shadow-lg space-y-4">
-//       <h2 className="text-gray-800 text-2xl sm:text-3xl md:text-4xl font-sans font-semibold tracking-tight leading-snug">
-//         Global Brands Trust WebNova AI.{" "}
-//         <span className="text-blue-600 font-bold">You Can Too.</span>
-//       </h2>
+//     <section className="relative py-10 sm:py-16 md:py-24 overflow-hidden">
+//       <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-blue-50 opacity-70"></div>
+//       <div className="absolute inset-0 bg-[url('/subtle-prism.svg')] opacity-10"></div>
+//       <div className="container mx-auto px-4 relative z-10">
+//         <div className="max-w-4xl mx-auto text-center mb-12 md:mb-16">
+//           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+//             Global Brands Trust KSVA Tech.{" "}
+//             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-400 font-extrabold">
+//               You Can Too!
+//             </span>
+//           </h2>
+//           <p className="text-lg sm:text-xl md:text-2xl text-gray-700 leading-relaxed mb-8">
+//             We help companies of all sizes grow with smart tech solutions. See
+//             how our partners are using our tools to succeed.
+//           </p>
+//           <Button size="default" className="font-semibold text-sm sm:text-base">
+//             Work With Us
+//           </Button>
+//         </div>
 
-//       <p className="text-gray-700 text-xl leading-relaxed font-sans font-normal">
-//         Your success is at the heart of everything we do. Explore the reputable
-//         brands that have thrived alongside us with a shared growth mindset.
-//       </p>
-
-//       {/* brand images */}
-//       <div className="grid grid-cols-4 gap-4 p-5">
-//         {[
-//           "/deer.jpeg",
-//           "/leapfrog.png",
-//           "/verisk.png",
-//           "/f1.png",
-//           "/esewa.webp",
-//           "/khalti.webp",
-//           "/cotiviti.jpeg",
-//           "/javra.png",
-//         ].map((src, index) => (
-//           <div key={index} className="flex justify-center items-center">
-//             <Image
-//               className="h-20 w-auto object-contain"
-//               src={src}
-//               alt={`Brand logo ${index + 1}`}
-//               width={300}
-//               height={200}
-//               quality={100}
-//             />
+//         <div className="w-full max-w-5xl mx-auto overflow-hidden">
+//           <div className="flex flex-col space-y-12">
+//             <motion.div
+//               className="relative w-full overflow-hidden h-20 sm:h-24 md:h-28"
+//               initial={{ opacity: 0, y: 20 }}
+//               animate={{ opacity: 1, y: 0 }}
+//               transition={{ duration: 0.6, delay: 0.2 }}
+//             >
+//               <div className="absolute flex animate-scroll-right whitespace-nowrap">
+//                 {[...brands, ...brands].map((src, index) => (
+//                   <motion.div
+//                     key={`top-${index}`}
+//                     className="flex-shrink-0 w-[160px] sm:w-[200px] md:w-[240px] mx-3 sm:mx-4 md:mx-6"
+//                     whileHover={{ scale: 1.05 }}
+//                     transition={{ type: "spring", stiffness: 400, damping: 10 }}
+//                   >
+//                     <Image
+//                       className="h-16 sm:h-20 md:h-24 w-[120px] sm:w-[150px] md:w-[180px] object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+//                       src={src}
+//                       alt={`Brand logo ${index + 1}`}
+//                       width={180}
+//                       height={96}
+//                       quality={100}
+//                     />
+//                   </motion.div>
+//                 ))}
+//               </div>
+//             </motion.div>
+//             <motion.div
+//               className="relative w-full overflow-hidden h-20 sm:h-24 md:h-28"
+//               initial={{ opacity: 0, y: 20 }}
+//               animate={{ opacity: 1, y: 0 }}
+//               transition={{ duration: 0.6, delay: 0.4 }}
+//             >
+//               <div className="absolute flex animate-scroll-left whitespace-nowrap">
+//                 {[...brands, ...brands].map((src, index) => (
+//                   <motion.div
+//                     key={`bottom-${index}`}
+//                     className="flex-shrink-0 w-[160px] sm:w-[200px] md:w-[240px] mx-3 sm:mx-4 md:mx-6"
+//                     whileHover={{ scale: 1.05 }}
+//                     transition={{ type: "spring", stiffness: 400, damping: 10 }}
+//                   >
+//                     <Image
+//                       className="h-16 sm:h-20 md:h-24 w-[120px] sm:w-[150px] md:w-[180px] object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+//                       src={src}
+//                       alt={`Brand logo ${index + 1}`}
+//                       width={180}
+//                       height={96}
+//                       quality={100}
+//                     />
+//                   </motion.div>
+//                 ))}
+//               </div>
+//             </motion.div>
 //           </div>
-//         ))}
+//         </div>
 //       </div>
-//     </div>
+//     </section>
 //   );
 // };
 
-// export default Brand;
+// export default MovingBrands;
 
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const MovingBrands = () => {
   const brands = [
-    "/deer.jpeg",
-    "/leapfrog.png",
-    "/verisk.png",
-    "/f1.png",
-    "/esewa.webp",
-    "/khalti.webp",
-    "/cotiviti.jpeg",
-    "/javra.png",
+    "/brand-01.png",
+    "/brand-02.png",
+    "/brand-03.png",
+    "/brand-04.png",
+    "/brand-05.png",
+    "/brand-06.png",
+    "/brand-07.png",
+    "/brand-08.png",
+    "/brand-09.png",
+    "/brand-10.png",
+    "/brand-15.png",
+    "/brand-16.png",
   ];
 
+  const controls = useAnimation();
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
+
+  const containerVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+      },
+    },
+  };
+
   return (
-    <div className="flex flex-col items-center text-center p-6 bg-gray-50 rounded-lg shadow-lg space-y-4">
-      <h2 className="text-gray-800 text-2xl sm:text-3xl md:text-4xl font-sans font-semibold tracking-tight leading-snug">
-        Global Brands Trust WebNova AI.{" "}
-        <span className="text-blue-600 font-bold">You Can Too.</span>
-      </h2>
+    <section className="relative py-10 sm:py-16 md:py-24 overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-blue-50 opacity-70"></div>
+      <div className="absolute inset-0 bg-[url('/subtle-prism.svg')] opacity-10"></div>
+      <motion.div
+        ref={ref}
+        initial="hidden"
+        animate={controls}
+        variants={containerVariants}
+        className="container mx-auto px-4 relative z-10"
+      >
+        <motion.div
+          variants={itemVariants}
+          className="max-w-4xl mx-auto text-center mb-12 md:mb-16"
+        >
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+            Global Brands Trust KSVA Tech.{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-400 font-extrabold">
+              You Can Too!
+            </span>
+          </h2>
+          <p className="text-lg sm:text-xl md:text-2xl text-gray-700 leading-relaxed mb-8">
+            We help companies of all sizes grow with smart tech solutions. See
+            how our partners are using our tools to succeed.
+          </p>
+          <Button size="default" className="font-semibold text-sm sm:text-base">
+            Work With Us
+          </Button>
+        </motion.div>
 
-      <p className="text-gray-700 text-xl leading-relaxed font-sans font-normal max-w-2xl mb-8">
-        Your success is at the heart of everything we do. Explore the reputable
-        brands that have thrived alongside us with a shared growth mindset.
-      </p>
-
-      <div className="w-full max-w-4xl overflow-hidden">
-        <div className="flex flex-col space-y-8">
-          <div className="relative w-full overflow-hidden h-24">
-            <div
-              className="absolute flex animate-scroll-right whitespace-nowrap"
-              style={{ width: `${brands.length * 200}px` }}
+        <motion.div
+          variants={itemVariants}
+          className="w-full max-w-5xl mx-auto overflow-hidden"
+        >
+          <div className="flex flex-col space-y-12">
+            <motion.div
+              className="relative w-full overflow-hidden h-20 sm:h-24 md:h-28"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
             >
-              {[...brands, ...brands].map((src, index) => (
-                <div
-                  key={`top-${index}`}
-                  className="flex-shrink-0 w-[200px] mx-4"
-                >
-                  <Image
-                    className="h-20 w-[150px] object-contain"
-                    src={src}
-                    alt={`Brand logo ${index + 1}`}
-                    width={150}
-                    height={80}
-                    quality={100}
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="relative w-full overflow-hidden h-24">
-            <div
-              className="absolute flex animate-scroll-left whitespace-nowrap"
-              style={{ width: `${brands.length * 200}px` }}
+              <div className="absolute flex animate-scroll-right whitespace-nowrap">
+                {[...brands, ...brands].map((src, index) => (
+                  <motion.div
+                    key={`top-${index}`}
+                    className="flex-shrink-0 w-[160px] sm:w-[200px] md:w-[240px] mx-3 sm:mx-4 md:mx-6"
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                  >
+                    <Image
+                      className="h-16 sm:h-20 md:h-24 w-[120px] sm:w-[150px] md:w-[180px] object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                      src={src}
+                      alt={`Brand logo ${index + 1}`}
+                      width={180}
+                      height={96}
+                      quality={100}
+                    />
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+            <motion.div
+              className="relative w-full overflow-hidden h-20 sm:h-24 md:h-28"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
             >
-              {[...brands, ...brands].map((src, index) => (
-                <div
-                  key={`bottom-${index}`}
-                  className="flex-shrink-0 w-[200px] mx-4"
-                >
-                  <Image
-                    className="h-20 w-[150px] object-contain"
-                    src={src}
-                    alt={`Brand logo ${index + 1}`}
-                    width={150}
-                    height={80}
-                    quality={100}
-                  />
-                </div>
-              ))}
-            </div>
+              <div className="absolute flex animate-scroll-left whitespace-nowrap">
+                {[...brands, ...brands].map((src, index) => (
+                  <motion.div
+                    key={`bottom-${index}`}
+                    className="flex-shrink-0 w-[160px] sm:w-[200px] md:w-[240px] mx-3 sm:mx-4 md:mx-6"
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                  >
+                    <Image
+                      className="h-16 sm:h-20 md:h-24 w-[120px] sm:w-[150px] md:w-[180px] object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                      src={src}
+                      alt={`Brand logo ${index + 1}`}
+                      width={180}
+                      height={96}
+                      quality={100}
+                    />
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
           </div>
-        </div>
-      </div>
-    </div>
+        </motion.div>
+      </motion.div>
+    </section>
   );
 };
 
