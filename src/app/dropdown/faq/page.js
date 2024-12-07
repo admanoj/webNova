@@ -1,8 +1,6 @@
 "use client";
 
-"use client";
-
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import {
@@ -12,6 +10,31 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Search, Server, Shield, Code, Headphones } from "lucide-react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+
+// Custom hook for scroll reveal animation
+const useScrollReveal = () => {
+  const controls = useAnimation();
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
+
+  return { ref, controls };
+};
+
+// Animation variants
+const revealVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+};
 
 const faqCategories = [
   { name: "Services", icon: Server },
@@ -83,9 +106,21 @@ export default function ImprovedFAQLandingPage() {
         faq.answer.toLowerCase().includes(searchTerm.toLowerCase()))
   );
 
+  const { ref: headerRef, controls: headerControls } = useScrollReveal();
+  const { ref: searchRef, controls: searchControls } = useScrollReveal();
+  const { ref: categoriesRef, controls: categoriesControls } =
+    useScrollReveal();
+  const { ref: faqsRef, controls: faqsControls } = useScrollReveal();
+
   return (
     <div className="min-h-screen bg-gray-50">
-      <header className="bg-gradient-to-r from-blue-600 to-blue-800 text-white shadow">
+      <motion.header
+        ref={headerRef}
+        initial="hidden"
+        animate={headerControls}
+        variants={revealVariants}
+        className="bg-gradient-to-r from-blue-600 to-blue-800 text-white shadow"
+      >
         <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl font-bold mb-4">
             Frequently Asked Questions
@@ -95,25 +130,37 @@ export default function ImprovedFAQLandingPage() {
             solutions.
           </p>
         </div>
-      </header>
+      </motion.header>
       <main className="max-w-7xl mx-auto py-12 sm:px-6 lg:px-8">
         <div className="px-4 sm:px-0">
-          <div className="mb-12">
+          <motion.div
+            ref={searchRef}
+            initial="hidden"
+            animate={searchControls}
+            variants={revealVariants}
+            className="mb-12"
+          >
             <div className="relative max-w-2xl mx-auto">
               <Input
                 type="text"
                 placeholder="Search FAQs..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="pl-10 py-6 text-lg rounded-full shadow-lg "
+                className="pl-10 py-6 text-lg rounded-full shadow-lg"
               />
               <Search
                 className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"
                 size={24}
               />
             </div>
-          </div>
-          <div className="mb-8 flex flex-wrap justify-center gap-4">
+          </motion.div>
+          <motion.div
+            ref={categoriesRef}
+            initial="hidden"
+            animate={categoriesControls}
+            variants={revealVariants}
+            className="mb-8 flex flex-wrap justify-center gap-4"
+          >
             <Button
               variant={activeCategory === "All" ? "default" : "outline"}
               onClick={() => setActiveCategory("All")}
@@ -134,33 +181,40 @@ export default function ImprovedFAQLandingPage() {
                 {category.name}
               </Button>
             ))}
-          </div>
-          <Accordion type="single" collapsible className="w-full space-y-4">
-            {filteredFAQs.map((faq, index) => (
-              <AccordionItem
-                value={`item-${index}`}
-                key={index}
-                className="bg-white rounded-lg shadow-md overflow-hidden"
-              >
-                <AccordionTrigger className="text-left px-6 py-4 hover:bg-blue-50 transition-colors">
-                  <span className="text-lg font-medium">{faq.question}</span>
-                </AccordionTrigger>
-                <AccordionContent className="px-6 py-4 bg-gradient-to-b from-blue-50 to-white">
-                  <p className="text-gray-700">{faq.answer}</p>
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-          {filteredFAQs.length === 0 && (
-            <div className="text-center py-12">
-              <p className="text-xl text-gray-600 mb-4">
-                No matching questions found.
-              </p>
-              <p className="text-gray-500">
-                Try a different search term or browse our categories.
-              </p>
-            </div>
-          )}
+          </motion.div>
+          <motion.div
+            ref={faqsRef}
+            initial="hidden"
+            animate={faqsControls}
+            variants={revealVariants}
+          >
+            <Accordion type="single" collapsible className="w-full space-y-4">
+              {filteredFAQs.map((faq, index) => (
+                <AccordionItem
+                  value={`item-${index}`}
+                  key={index}
+                  className="bg-white rounded-lg shadow-md overflow-hidden"
+                >
+                  <AccordionTrigger className="text-left px-6 py-4 hover:bg-blue-50 transition-colors">
+                    <span className="text-lg font-medium">{faq.question}</span>
+                  </AccordionTrigger>
+                  <AccordionContent className="px-6 py-4 bg-gradient-to-b from-blue-50 to-white">
+                    <p className="text-gray-700">{faq.answer}</p>
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+            {filteredFAQs.length === 0 && (
+              <div className="text-center py-12">
+                <p className="text-xl text-gray-600 mb-4">
+                  No matching questions found.
+                </p>
+                <p className="text-gray-500">
+                  Try a different search term or browse our categories.
+                </p>
+              </div>
+            )}
+          </motion.div>
         </div>
       </main>
     </div>

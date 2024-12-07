@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import {
@@ -11,6 +12,31 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { ArrowRight } from "lucide-react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+
+// Custom hook for scroll reveal animation
+const useScrollReveal = () => {
+  const controls = useAnimation();
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  React.useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
+
+  return { ref, controls };
+};
+
+// Animation variants
+const revealVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+};
 
 const caseStudies = [
   {
@@ -48,16 +74,28 @@ const caseStudies = [
 ];
 
 export default function CaseStudies() {
+  const { ref: headerRef, controls: headerControls } = useScrollReveal();
+  const { ref: ctaRef, controls: ctaControls } = useScrollReveal();
+
   return (
     <div className="min-h-screen bg-white">
       {/* Header Section */}
       <header className="bg-[#0046B8] text-white py-12 md:py-24">
         <div className="container mx-auto px-4">
-          <h1 className="text-3xl md:text-5xl font-bold mb-4">Case Studies</h1>
-          <p className="text-xl md:text-2xl max-w-2xl">
-            Discover how we've helped businesses transform their IT
-            infrastructure and achieve remarkable results.
-          </p>
+          <motion.div
+            ref={headerRef}
+            initial="hidden"
+            animate={headerControls}
+            variants={revealVariants}
+          >
+            <h1 className="text-3xl md:text-5xl font-bold mb-4">
+              Case Studies
+            </h1>
+            <p className="text-xl md:text-2xl max-w-2xl">
+              Discover how we've helped businesses transform their IT
+              infrastructure and achieve remarkable results.
+            </p>
+          </motion.div>
         </div>
       </header>
 
@@ -65,30 +103,46 @@ export default function CaseStudies() {
       <section className="py-12 md:py-24">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {caseStudies.map((study) => (
-              <Card key={study.id} className="flex flex-col h-full">
-                <CardHeader>
-                  <CardTitle className="text-[#0046B8]">
-                    {study.title}
-                  </CardTitle>
-                  <CardDescription>{study.category}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p>{study.description}</p>
-                </CardContent>
-                <CardFooter className="mt-auto">
-                  <Button variant="outline" className="w-full group" asChild>
-                    <Link
-                      href={`/case-study/${study.id}`}
-                      className="flex items-center justify-center"
-                    >
-                      Read More
-                      <ArrowRight className="ml-2 h-4 w-4 opacity-0 transition-opacity group-hover:opacity-100" />
-                    </Link>
-                  </Button>
-                </CardFooter>
-              </Card>
-            ))}
+            {caseStudies.map((study, index) => {
+              const { ref, controls } = useScrollReveal();
+              return (
+                <motion.div
+                  key={study.id}
+                  ref={ref}
+                  initial="hidden"
+                  animate={controls}
+                  variants={revealVariants}
+                  custom={index}
+                >
+                  <Card className="flex flex-col h-full">
+                    <CardHeader>
+                      <CardTitle className="text-[#0046B8]">
+                        {study.title}
+                      </CardTitle>
+                      <CardDescription>{study.category}</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <p>{study.description}</p>
+                    </CardContent>
+                    <CardFooter className="mt-auto">
+                      <Button
+                        variant="outline"
+                        className="w-full group"
+                        asChild
+                      >
+                        <Link
+                          href={`/case-study/${study.id}`}
+                          className="flex items-center justify-center"
+                        >
+                          Read More
+                          <ArrowRight className="ml-2 h-4 w-4 opacity-0 transition-opacity group-hover:opacity-100" />
+                        </Link>
+                      </Button>
+                    </CardFooter>
+                  </Card>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -96,21 +150,28 @@ export default function CaseStudies() {
       {/* Call to Action Section */}
       <section className="bg-[#E6F0FF] py-12 md:py-24">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-2xl md:text-4xl font-bold text-[#0046B8] mb-4">
-            Ready to Transform Your Business?
-          </h2>
-          <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
-            Let's discuss how our IT solutions can drive your business forward.
-            Our experts are ready to create a tailored strategy for your unique
-            needs.
-          </p>
-          <Button
-            size="lg"
-            className="bg-[#0046B8] hover:bg-[#003A99] text-white"
-            asChild
+          <motion.div
+            ref={ctaRef}
+            initial="hidden"
+            animate={ctaControls}
+            variants={revealVariants}
           >
-            <Link href="/contact">Contact Us Today</Link>
-          </Button>
+            <h2 className="text-2xl md:text-4xl font-bold text-[#0046B8] mb-4">
+              Ready to Transform Your Business?
+            </h2>
+            <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
+              Let's discuss how our IT solutions can drive your business
+              forward. Our experts are ready to create a tailored strategy for
+              your unique needs.
+            </p>
+            <Button
+              size="lg"
+              className="bg-[#0046B8] hover:bg-[#003A99] text-white"
+              asChild
+            >
+              <Link href="/contact">Contact Us Today</Link>
+            </Button>
+          </motion.div>
         </div>
       </section>
     </div>

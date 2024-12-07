@@ -1,5 +1,32 @@
+"use client";
+import React from "react";
 import { Shield, Cloud, Lock, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+
+// Custom hook for scroll reveal animation
+const useScrollReveal = () => {
+  const controls = useAnimation();
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  React.useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
+
+  return { ref, controls };
+};
+
+// Animation variants
+const revealVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+};
 
 export default function CloudSecurity() {
   return (
@@ -21,7 +48,12 @@ export default function CloudSecurity() {
           </div>
           <div className="container px-4 md:px-6 relative z-10">
             <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
-              <div className="flex flex-col justify-center space-y-4">
+              <motion.div
+                initial="hidden"
+                animate="visible"
+                variants={revealVariants}
+                className="flex flex-col justify-center space-y-4"
+              >
                 <div className="space-y-2">
                   <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
                     Cloud Security Consulting Services
@@ -44,31 +76,56 @@ export default function CloudSecurity() {
                     <ChevronRight className="ml-2 h-4 w-4" />
                   </Button>
                 </div>
-              </div>
-              <div className="flex items-center justify-center">
+              </motion.div>
+              <motion.div
+                initial="hidden"
+                animate="visible"
+                variants={revealVariants}
+                className="flex items-center justify-center"
+              >
                 <div className="relative h-[400px] w-full">
                   <div className="absolute right-0 top-0">
                     <div className="relative h-[300px] w-[300px] rounded-lg bg-blue-500/30 p-4">
-                      <div className="absolute -right-4 -top-4 h-24 w-24">
+                      <motion.div
+                        initial={{ opacity: 0, scale: 0.5 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: 0.2, duration: 0.5 }}
+                        className="absolute -right-4 -top-4 h-24 w-24"
+                      >
                         <Lock className="h-12 w-12 text-yellow-400" />
-                      </div>
-                      <div className="absolute bottom-4 right-4">
+                      </motion.div>
+                      <motion.div
+                        initial={{ opacity: 0, scale: 0.5 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: 0.4, duration: 0.5 }}
+                        className="absolute bottom-4 right-4"
+                      >
                         <Shield className="h-16 w-16 text-yellow-400" />
-                      </div>
-                      <div className="absolute left-4 top-4">
+                      </motion.div>
+                      <motion.div
+                        initial={{ opacity: 0, scale: 0.5 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: 0.6, duration: 0.5 }}
+                        className="absolute left-4 top-4"
+                      >
                         <Cloud className="h-20 w-20 text-white/20" />
-                      </div>
+                      </motion.div>
                     </div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             </div>
           </div>
         </section>
         <section className="w-full py-12 md:py-24 lg:py-32">
           <div className="container px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-[300px_1fr] lg:gap-12">
-              <div className="flex flex-col gap-4">
+              <motion.div
+                initial="hidden"
+                animate="visible"
+                variants={revealVariants}
+                className="flex flex-col gap-4"
+              >
                 <div className="font-semibold">Table of contents</div>
                 <nav className="flex flex-col gap-2">
                   <a className="text-sm hover:text-primary" href="#controls">
@@ -90,29 +147,49 @@ export default function CloudSecurity() {
                     Success stories
                   </a>
                 </nav>
-              </div>
+              </motion.div>
               <div className="space-y-8">
-                <h2 className="text-3xl font-bold tracking-tighter">
+                <motion.h2
+                  initial="hidden"
+                  animate="visible"
+                  variants={revealVariants}
+                  className="text-3xl font-bold tracking-tighter"
+                >
                   We Know How to Keep Your Cloud out of Harm's Way
-                </h2>
-                <p className="text-muted-foreground md:text-lg">
+                </motion.h2>
+                <motion.p
+                  initial="hidden"
+                  animate="visible"
+                  variants={revealVariants}
+                  className="text-muted-foreground md:text-lg"
+                >
                   Cloud security consulting provides guidance on preventing
                   unauthorized access to your cloud resources. Whether you need
                   to set up a secure cloud environment from scratch or are
                   striving to ensure full protection of your existing cloud
                   assets, our trusted cloud security consultants will
                   confidently guide you through this process.
-                </p>
+                </motion.p>
                 <div className="grid gap-6 md:grid-cols-2">
-                  <div className="space-y-2">
+                  <motion.div
+                    initial="hidden"
+                    animate="visible"
+                    variants={revealVariants}
+                    className="space-y-2"
+                  >
                     <h3 className="text-xl font-bold">Expert Guidance</h3>
                     <p className="text-muted-foreground">
                       Our cloud security experts will help you apply the
                       security techniques and tools that best suit your cloud
                       environment specifics.
                     </p>
-                  </div>
-                  <div className="space-y-2">
+                  </motion.div>
+                  <motion.div
+                    initial="hidden"
+                    animate="visible"
+                    variants={revealVariants}
+                    className="space-y-2"
+                  >
                     <h3 className="text-xl font-bold">
                       Comprehensive Protection
                     </h3>
@@ -120,7 +197,7 @@ export default function CloudSecurity() {
                       We ensure complete security coverage across your entire
                       cloud infrastructure, applications, and data.
                     </p>
-                  </div>
+                  </motion.div>
                 </div>
               </div>
             </div>

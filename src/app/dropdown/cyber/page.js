@@ -1,3 +1,5 @@
+"use client";
+import React from "react";
 import {
   Shield,
   Lock,
@@ -10,6 +12,31 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+
+// Custom hook for scroll reveal animation
+const useScrollReveal = () => {
+  const controls = useAnimation();
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  React.useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
+
+  return { ref, controls };
+};
+
+// Animation variants
+const revealVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+};
 
 export default function CyberSecurityLanding() {
   return (
@@ -32,7 +59,12 @@ export default function CyberSecurityLanding() {
           </div>
           <div className="container px-4 md:px-6 relative z-10">
             <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
-              <div className="flex flex-col justify-center space-y-3 sm:space-y-4">
+              <motion.div
+                initial="hidden"
+                animate="visible"
+                variants={revealVariants}
+                className="flex flex-col justify-center space-y-3 sm:space-y-4"
+              >
                 <div className="space-y-2">
                   <h1 className="text-2xl sm:text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none max-w-[600px]">
                     Protect Your Digital Assets with Advanced Cybersecurity
@@ -60,18 +92,41 @@ export default function CyberSecurityLanding() {
                     </Button>
                   </div>
                 </div>
-              </div>
-              <div className="flex items-center justify-center mt-8 lg:mt-0">
+              </motion.div>
+              <motion.div
+                initial="hidden"
+                animate="visible"
+                variants={revealVariants}
+                className="flex items-center justify-center mt-8 lg:mt-0"
+              >
                 <div className="relative h-[300px] w-full max-w-[300px] sm:h-[400px] sm:max-w-[400px]">
                   <div className="absolute inset-0">
                     <div className="relative h-full w-full rounded-lg bg-blue-900/80 p-4 backdrop-blur-sm">
-                      <Shield className="absolute right-4 top-4 h-20 w-20 text-yellow-400" />
-                      <Lock className="absolute left-4 bottom-4 h-16 w-16 text-white/20" />
-                      <Server className="absolute right-4 bottom-4 h-12 w-12 text-yellow-400/60" />
+                      <motion.div
+                        initial={{ opacity: 0, scale: 0.5 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: 0.2, duration: 0.5 }}
+                      >
+                        <Shield className="absolute right-4 top-4 h-20 w-20 text-yellow-400" />
+                      </motion.div>
+                      <motion.div
+                        initial={{ opacity: 0, scale: 0.5 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: 0.4, duration: 0.5 }}
+                      >
+                        <Lock className="absolute left-4 bottom-4 h-16 w-16 text-white/20" />
+                      </motion.div>
+                      <motion.div
+                        initial={{ opacity: 0, scale: 0.5 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: 0.6, duration: 0.5 }}
+                      >
+                        <Server className="absolute right-4 bottom-4 h-12 w-12 text-yellow-400/60" />
+                      </motion.div>
                     </div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             </div>
           </div>
         </section>
@@ -79,7 +134,12 @@ export default function CyberSecurityLanding() {
         {/* Stats Section */}
         <section className="w-full py-8 md:py-16 lg:py-24 bg-gray-50">
           <div className="container px-4 md:px-6">
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={revealVariants}
+              className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
+            >
               <div className="flex flex-col items-center space-y-2 text-center">
                 <h3 className="text-3xl font-bold">20+ Years</h3>
                 <p className="text-muted-foreground">
@@ -98,14 +158,19 @@ export default function CyberSecurityLanding() {
                   successful security projects
                 </p>
               </div>
-            </div>
+            </motion.div>
           </div>
         </section>
 
         {/* Services Section */}
         <section className="w-full py-8 md:py-16 lg:py-24">
           <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-3 sm:space-y-4 text-center">
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={revealVariants}
+              className="flex flex-col items-center justify-center space-y-3 sm:space-y-4 text-center"
+            >
               <div className="space-y-2">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
                   Our Security Services
@@ -115,37 +180,49 @@ export default function CyberSecurityLanding() {
                   at every level
                 </p>
               </div>
-            </div>
+            </motion.div>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              <Card>
-                <CardContent className="p-6 space-y-2">
-                  <Globe className="h-12 w-12 text-primary" />
-                  <h3 className="text-xl font-bold">Network Security</h3>
-                  <p className="text-muted-foreground">
-                    Protect your network infrastructure with advanced threat
-                    detection and prevention
-                  </p>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardContent className="p-6 space-y-2">
-                  <Cloud className="h-12 w-12 text-primary" />
-                  <h3 className="text-xl font-bold">Cloud Security</h3>
-                  <p className="text-muted-foreground">
-                    Secure cloud environments and applications with
-                    comprehensive protection
-                  </p>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardContent className="p-6 space-y-2">
-                  <Database className="h-12 w-12 text-primary" />
-                  <h3 className="text-xl font-bold">Data Protection</h3>
-                  <p className="text-muted-foreground">
-                    Safeguard sensitive data with encryption and access control
-                  </p>
-                </CardContent>
-              </Card>
+              {[
+                {
+                  icon: <Globe className="h-12 w-12 text-primary" />,
+                  title: "Network Security",
+                  description:
+                    "Protect your network infrastructure with advanced threat detection and prevention",
+                },
+                {
+                  icon: <Cloud className="h-12 w-12 text-primary" />,
+                  title: "Cloud Security",
+                  description:
+                    "Secure cloud environments and applications with comprehensive protection",
+                },
+                {
+                  icon: <Database className="h-12 w-12 text-primary" />,
+                  title: "Data Protection",
+                  description:
+                    "Safeguard sensitive data with encryption and access control",
+                },
+              ].map((service, index) => {
+                const { ref, controls } = useScrollReveal();
+                return (
+                  <motion.div
+                    key={index}
+                    ref={ref}
+                    initial="hidden"
+                    animate={controls}
+                    variants={revealVariants}
+                  >
+                    <Card>
+                      <CardContent className="p-6 space-y-2">
+                        {service.icon}
+                        <h3 className="text-xl font-bold">{service.title}</h3>
+                        <p className="text-muted-foreground">
+                          {service.description}
+                        </p>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
+                );
+              })}
             </div>
           </div>
         </section>
@@ -154,7 +231,12 @@ export default function CyberSecurityLanding() {
         <section className="w-full py-8 md:py-16 lg:py-24 bg-gray-50">
           <div className="container px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-[1fr_350px] lg:gap-12 xl:grid-cols-[1fr_600px]">
-              <div className="flex flex-col justify-center space-y-3 sm:space-y-4">
+              <motion.div
+                initial="hidden"
+                animate="visible"
+                variants={revealVariants}
+                className="flex flex-col justify-center space-y-3 sm:space-y-4"
+              >
                 <div className="space-y-2">
                   <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
                     Why Choose Our Cybersecurity Services?
@@ -165,54 +247,73 @@ export default function CyberSecurityLanding() {
                   </p>
                 </div>
                 <div className="grid gap-4 sm:grid-cols-2">
-                  <div className="flex items-start space-x-2">
-                    <CheckCircle2 className="mt-1 h-5 w-5 text-primary" />
-                    <div>
-                      <h3 className="font-bold">24/7 Monitoring</h3>
-                      <p className="text-muted-foreground">
-                        Continuous threat detection and response
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-2">
-                    <CheckCircle2 className="mt-1 h-5 w-5 text-primary" />
-                    <div>
-                      <h3 className="font-bold">Expert Team</h3>
-                      <p className="text-muted-foreground">
-                        Certified security professionals
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-2">
-                    <CheckCircle2 className="mt-1 h-5 w-5 text-primary" />
-                    <div>
-                      <h3 className="font-bold">Compliance</h3>
-                      <p className="text-muted-foreground">
-                        Meet industry regulations
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-2">
-                    <CheckCircle2 className="mt-1 h-5 w-5 text-primary" />
-                    <div>
-                      <h3 className="font-bold">Advanced Tools</h3>
-                      <p className="text-muted-foreground">
-                        Latest security technologies
-                      </p>
-                    </div>
-                  </div>
+                  {[
+                    {
+                      title: "24/7 Monitoring",
+                      description: "Continuous threat detection and response",
+                    },
+                    {
+                      title: "Expert Team",
+                      description: "Certified security professionals",
+                    },
+                    {
+                      title: "Compliance",
+                      description: "Meet industry regulations",
+                    },
+                    {
+                      title: "Advanced Tools",
+                      description: "Latest security technologies",
+                    },
+                  ].map((feature, index) => {
+                    const { ref, controls } = useScrollReveal();
+                    return (
+                      <motion.div
+                        key={index}
+                        ref={ref}
+                        initial="hidden"
+                        animate={controls}
+                        variants={revealVariants}
+                        className="flex items-start space-x-2"
+                      >
+                        <CheckCircle2 className="mt-1 h-5 w-5 text-primary" />
+                        <div>
+                          <h3 className="font-bold">{feature.title}</h3>
+                          <p className="text-muted-foreground">
+                            {feature.description}
+                          </p>
+                        </div>
+                      </motion.div>
+                    );
+                  })}
                 </div>
-              </div>
-              <div className="flex items-center justify-center">
+              </motion.div>
+              <motion.div
+                initial="hidden"
+                animate="visible"
+                variants={revealVariants}
+                className="flex items-center justify-center"
+              >
                 <div className="relative h-[300px] w-full max-w-[300px] sm:h-[400px] sm:max-w-[400px]">
                   <div className="absolute inset-0">
                     <div className="relative h-full w-full rounded-lg bg-gradient-to-br from-primary/80 to-primary p-4">
-                      <Shield className="absolute right-4 top-4 h-20 w-20 text-white/20" />
-                      <Lock className="absolute left-4 bottom-4 h-16 w-16 text-white/10" />
+                      <motion.div
+                        initial={{ opacity: 0, scale: 0.5 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: 0.2, duration: 0.5 }}
+                      >
+                        <Shield className="absolute right-4 top-4 h-20 w-20 text-white/20" />
+                      </motion.div>
+                      <motion.div
+                        initial={{ opacity: 0, scale: 0.5 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: 0.4, duration: 0.5 }}
+                      >
+                        <Lock className="absolute left-4 bottom-4 h-16 w-16 text-white/10" />
+                      </motion.div>
                     </div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             </div>
           </div>
         </section>
@@ -220,7 +321,12 @@ export default function CyberSecurityLanding() {
         {/* CTA Section */}
         <section className="w-full py-8 md:py-16 lg:py-24 bg-primary text-primary-foreground">
           <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-3 sm:space-y-4 text-center">
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={revealVariants}
+              className="flex flex-col items-center justify-center space-y-3 sm:space-y-4 text-center"
+            >
               <div className="space-y-2">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
                   Ready to Secure Your Business?
@@ -239,7 +345,7 @@ export default function CyberSecurityLanding() {
                   <ChevronRight className="ml-2 h-4 w-4" />
                 </Button>
               </div>
-            </div>
+            </motion.div>
           </div>
         </section>
       </main>

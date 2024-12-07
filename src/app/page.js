@@ -15,6 +15,8 @@ import Service from "./services/page";
 
 import Video from "./video/page";
 import Navbar from "./navbar/page";
+import { AnimatedTestimonialsDemo } from "./animated/page";
+import HowWeWork from "./howWeWork/page";
 
 const Layout = () => {
   return (
@@ -26,15 +28,17 @@ const Layout = () => {
       </div> */}
 
       <Video />
+      <Service />
       <BackgroundBoxesDemo />
       <AboutUs />
+      <HowWeWork />
 
-      <Service />
       {/* <Role /> */}
       {/* <Teams /> */}
       <Brand />
       <SparklesPreview />
       <Contact />
+      <AnimatedTestimonialsDemo />
       {/* <Footer /> */}
     </div>
   );
