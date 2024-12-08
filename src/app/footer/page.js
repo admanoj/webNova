@@ -20,7 +20,7 @@ import Navbar from "../navbar/page";
 export default function Footer() {
   const navItems = [
     { name: "Home", href: "#home", icon: Home },
-    { name: "about", href: "/aboutTeam", icon: Info },
+    { name: "About", href: "/aboutTeam", icon: Info },
     { name: "Our Services", href: "/services", icon: Briefcase },
     { name: "Blogs", href: "/dropdown/blog/", icon: BookOpen },
   ];
@@ -60,7 +60,7 @@ export default function Footer() {
             />
 
             <p className="mt-4 text-sm text-blue-200 text-center md:text-left">
-              Turning visions into digital realities
+              Empowering Business Growth
             </p>
           </div>
 

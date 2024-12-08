@@ -58,18 +58,16 @@ const AboutTeam = () => {
               Tech Solutions Today
             </h2>
             <p className="text-xl text-gray-700">
-              As your dedicated tech partner, we bring innovative solutions to
-              life.
+              As your dedicated tech partner, we deliver innovative solutions
+              that drive success.
             </p>
             <p className="text-gray-600">
-              At KSVA Tech, we've assembled a powerhouse team of 450+ industry
-              veterans, including seasoned founders, CTOs, visionary product
-              designers, and elite engineers. Our decade-long journey has seen
-              us successfully deliver over 100 groundbreaking products. We've
-              collaborated with a diverse array of forward-thinking startups and
-              enterprises, crafting solutions that seamlessly blend intuitive
-              user experiences with sophisticated data management, cloud
-              infrastructure, and robust security measures.
+              At KSVA Tech, our team of 450+ industry experts, including
+              founders, CTOs, designers, and engineers, has spent over a decade
+              delivering 100+ groundbreaking products. We&#39;ve partnered with
+              forward-thinking startups and enterprises to create seamless
+              solutions that integrate intuitive user experiences, advanced data
+              management, cloud infrastructure, and robust security.
             </p>
           </div>
           <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-xl">
@@ -101,13 +99,13 @@ const AboutTeam = () => {
               Dedicated to Your Success
             </p>
             <p className="text-gray-600">
-              At the heart of KSVA Tech is our unwavering focus on our clients'
-              success. We're passionate about finding new ways to bring ideas to
-              life, from concept to finished product. By using our expertise, we
-              help our customers innovate faster and make their teams work
-              better. The fact that over 90% of our business comes from happy
-              clients referring us shows that we consistently deliver great
-              results.
+              At the heart of KSVA Tech is our unwavering focus on our
+              clients&#39; success. We&#39;re passionate about finding new ways
+              to bring ideas to life, from concept to finished product. By
+              leveraging our expertise, we help our clients innovate faster and
+              improve team performance. The fact that over 90% of our business
+              comes from satisfied clients referring to us demonstrates our
+              consistent ability to deliver exceptional results.
             </p>
           </div>
         </section>

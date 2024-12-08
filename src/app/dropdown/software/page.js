@@ -44,11 +44,11 @@ export default function KSVNTechLanding() {
         <div className="container mx-auto px-4 flex flex-col md:flex-row items-center ">
           <div className="md:w-1/2 mb-10 md:mb-0 ">
             <h1 className="text-4xl md:text-6xl font-extrabold text-blue-900 leading-tight mb-6">
-              Innovative Software Solutions by KSVN Tech
+              Innovative Software Solutions by KSVA Tech
             </h1>
             <p className="text-xl text-blue-700 mb-8">
               We transform your ideas into powerful, scalable software that
-              drives business growth and technological advancement.
+              fuels business growth and drives technological advancement.
             </p>
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
               <Button size="lg" className="w-full sm:w-auto">
@@ -62,7 +62,7 @@ export default function KSVNTechLanding() {
           <div className="md:w-1/2">
             <img
               src="/sof.svg"
-              alt="KSVN Tech Software Development Illustration"
+              alt="KSVA Tech Software Development Illustration"
               className="w-full max-w-md mx-auto rounded-lg shadow-2xl"
             />
           </div>
@@ -153,7 +153,7 @@ export default function KSVNTechLanding() {
             variants={revealVariants}
             className="text-3xl md:text-4xl font-bold text-center text-blue-900 mb-12"
           >
-            KSVN Tech Development Process
+            KSVA Tech Development Process
           </motion.h2>
           <div className="flex flex-col md:flex-row justify-center items-center md:space-x-8">
             {[
@@ -219,7 +219,7 @@ export default function KSVNTechLanding() {
             variants={revealVariants}
             className="text-3xl md:text-4xl font-bold text-center text-blue-900 mb-12"
           >
-            Technologies We Master
+            Technologies we specialize in
           </motion.h2>
           <Tabs defaultValue="frontend" className="w-full max-w-3xl mx-auto">
             <TabsList className="grid w-full grid-cols-3">
@@ -302,7 +302,7 @@ export default function KSVNTechLanding() {
       >
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Ready to Innovate with KSVN Tech?
+            Ready to Innovate with KSVA Tech?
           </h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
             Let's collaborate to create cutting-edge software solutions that

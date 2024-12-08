@@ -126,7 +126,7 @@ export default function CloudSecurity() {
                 variants={revealVariants}
                 className="flex flex-col gap-4"
               >
-                <div className="font-semibold">Table of contents</div>
+                <div className="font-semibold text-lg">Table of Contents</div>
                 <nav className="flex flex-col gap-2">
                   <a className="text-sm hover:text-primary" href="#controls">
                     Controls we handle
@@ -155,7 +155,7 @@ export default function CloudSecurity() {
                   variants={revealVariants}
                   className="text-3xl font-bold tracking-tighter"
                 >
-                  We Know How to Keep Your Cloud out of Harm's Way
+                  Cloud Security Consulting You Can Trust
                 </motion.h2>
                 <motion.p
                   initial="hidden"
@@ -163,12 +163,11 @@ export default function CloudSecurity() {
                   variants={revealVariants}
                   className="text-muted-foreground md:text-lg"
                 >
-                  Cloud security consulting provides guidance on preventing
-                  unauthorized access to your cloud resources. Whether you need
-                  to set up a secure cloud environment from scratch or are
-                  striving to ensure full protection of your existing cloud
-                  assets, our trusted cloud security consultants will
-                  confidently guide you through this process.
+                  Our cloud security consulting helps prevent unauthorized
+                  access to your cloud resources. Whether you&#39;re building a
+                  secure cloud environment or enhancing the protection of your
+                  existing cloud assets, our expert consultants will guide you
+                  every step of the way.
                 </motion.p>
                 <div className="grid gap-6 md:grid-cols-2">
                   <motion.div

@@ -30,9 +30,9 @@ const Service = () => {
             <br /> Development
           </h3>
           <p className="mt-4 text-gray-700 text-xl font-normal font-sans">
-            Highly functional & visually appealing website
-            <br /> designed to meet your
-            <br /> need.
+            Crafting highly functional and visually appealing websites tailored
+            <br />
+            to your specific needs.
           </p>
         </div>
 
@@ -40,8 +40,8 @@ const Service = () => {
           <img src="/ui.svg" className="w-32 h-32" />
           <h3 className="text-2xl font-semibold text-gray-800">UI/UX</h3>
           <p className="mt-4 text-gray-700 text-xl font-normal font-sans">
-            Design eye-catching UI/UX interfaces for effortless user
-            interaction.
+            Develop a compelling and memorable brand identity that connects with
+            your audience.
           </p>
         </div>
 
@@ -60,7 +60,7 @@ const Service = () => {
             Search Engine Optimization (SEO)
           </h3>
           <p className="mt-4 text-gray-700 text-xl font-normal font-sans">
-            Custom SEO solutions for enhanced search engine visibility and
+            Tailored SEO strategies to boost search engine visibility and drive
             growth.
           </p>
         </div>
@@ -82,7 +82,8 @@ const Service = () => {
             Content Creation
           </h3>
           <p className="mt-4 text-gray-700 text-xl font-normal font-sans">
-            Engaging and meaningful content to connect with your audience.
+            Crafting impactful and engaging content to foster audience
+            connection.
           </p>
         </div>
 
@@ -92,8 +93,8 @@ const Service = () => {
             Digital Marketing
           </h3>
           <p className="mt-4 text-gray-700 text-xl font-normal font-sans">
-            Boost your brand’s visibility and engagement with targeted digital
-            marketing strategies.
+            Enhance your brand's presence and engagement with precision-driven
+            digital strategies.
           </p>
         </div>
 
@@ -103,7 +104,8 @@ const Service = () => {
             Lead Generation
           </h3>
           <p className="mt-4 text-gray-700 text-xl font-normal font-sans">
-            Attract and convert quality leads to fuel your business growth.
+            Attract, engage, and convert high-quality leads to drive business
+            growth.
           </p>
         </div>
       </div>

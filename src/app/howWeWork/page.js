@@ -7,13 +7,13 @@ export default function HowWeWork() {
       number: "01",
       title: "Requirement Gathering",
       description:
-        "We start our collaboration by collecting client requirements, listing and compiling them. This helps us build the process from scratch to deliver results aligned with your goals.",
+        " We begin our collaboration by gathering client requirements, listing, and compiling them. This allows us to build the process from the ground up, delivering results aligned with your goals. ",
     },
     {
       number: "02",
       title: "Plan & Resources",
       description:
-        "After gathering requirements, we devise a strategic path and select resources. As a leading IT company, we offer clients a roadmap, laying the groundwork for a successful project.",
+        "After gathering requirements, we develop a strategic plan and allocate resources. As a leading IT company, we provide clients with a roadmap, setting the foundation for a successful project.",
     },
     {
       number: "03",
@@ -25,19 +25,19 @@ export default function HowWeWork() {
       number: "04",
       title: "Quality Assurance",
       description:
-        "In this phase, we rigorously test and validate to ensure all elements work correctly and meet standards, delivering the desired user experience. Our team tests each aspect for reliability.",
+        "In this phase, we carefully test and validate all elements to ensure they function correctly and meet standards, delivering the desired user experience. Our team examines each aspect for reliability.",
     },
     {
       number: "05",
       title: "Deployment",
       description:
-        "Once the product meets standards, we deploy it, releasing product or updates on servers. This ensures our products are delivered seamlessly and efficiently.",
+        "Once the product meets the required standards, we deploy it, releasing the product or updates to the servers. This ensures seamless and efficient delivery. ",
     },
     {
       number: "06",
       title: "Support & Maintenance",
       description:
-        "In the final stage, we maintain systems to ensure smooth operation, security, and reliability. Optimization keeps performance high and client satisfaction focused on operational excellence.",
+        "In the final stage, we maintain systems to ensure smooth operation, security, and reliability. Ongoing optimization enhances performance, with a focus on client satisfaction and operational excellence.",
     },
   ];
 
@@ -49,16 +49,16 @@ export default function HowWeWork() {
           How We Work
           <span className="w-12 h-px bg-gray-400"></span>
         </h2>
-        <h3 className="text-4xl md:text-5xl font-bold mb-8 text-gray-800">
-          Enjoy Seamless Service With{" "}
+        <h3 className="text-3xl md:text-5xl font-bold mb-8 text-gray-800">
+          Enjoy seamless service through our simple,{" "}
           <span className="text-blue-600  px-2 py-1 rounded">
-            Our Easy Steps!
+            streamlined process:
           </span>
         </h3>
         <div className="flex items-center justify-center gap-2 text-lg">
           <p className="text-gray-600">
-            Efficient workflow from requirements gathering to support and
-            maintenance
+            An efficient workflow, from requirements gathering to ongoing
+            support and maintenance.
           </p>
           <Button
             variant="link"

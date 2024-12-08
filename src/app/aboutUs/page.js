@@ -192,12 +192,11 @@ export default function AboutUs() {
         <h1 className="text-3xl md:text-4xl font-bold text-blue-800 mb-4">
           Discover KSVA Tech
         </h1>
-        <h2 className="text-2xl md:text-3xl text-blue-600 mb-4">
+        {/* <h2 className="text-2xl md:text-3xl text-blue-600 mb-4">
           Innovating for Tomorrow
-        </h2>
+        </h2> */}
         <p className="text-blue-700 text-lg">
-          Transforming ideas into powerful digital solutions that drive your
-          business forward.
+          Innovating digital solutions that propel your business forward
         </p>
       </motion.div>
 
@@ -216,7 +215,7 @@ export default function AboutUs() {
             title: "Our Purpose",
             icon: Rocket,
             content:
-              "We're on a mission to revolutionize businesses through cutting-edge software. Our goal is to boost efficiency, elevate user experiences, and catalyze growth. We harness technology's potential to solve intricate problems and unlock new opportunities.",
+              "We're on a mission to revolutionize businesses through cutting-edge software. Our goal is to enhance efficiency, elevate user experiences, and catalyze growth. We harness the power of technology to solve intricate problems and unlock new opportunities.",
           },
           {
             title: "Our Expertise",
@@ -228,7 +227,7 @@ export default function AboutUs() {
               "Digital Marketing",
               "Social Media Strategy",
               "DevOps Solutions",
-              "Mobile App Creation",
+              "Mobile App Development",
             ],
           },
         ].map((item, index) => (

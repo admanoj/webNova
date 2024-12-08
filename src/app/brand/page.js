@@ -186,8 +186,9 @@ const MovingBrands = () => {
             </span>
           </h2>
           <p className="text-lg sm:text-xl md:text-2xl text-gray-700 leading-relaxed mb-8">
-            We help companies of all sizes grow with smart tech solutions. See
-            how our partners are using our tools to succeed.
+            We empower companies of all sizes to grow with intelligent tech
+            solutions. Discover how our partners are leveraging our tools for
+            success.
           </p>
           <Button size="default" className="font-semibold text-sm sm:text-base">
             Work With Us
