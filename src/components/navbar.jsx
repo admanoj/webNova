@@ -693,7 +693,7 @@ export function NavbarItems() {
         <div className="flex items-center space-x-4">
           <Link href="/business" className="hidden sm:inline-flex">
             <Button className="bg-gradient-to-r from-blue-600 to-blue-800 text-white hover:from-blue-700 hover:to-blue-900 text-sm sm:text-base lg:text-lg px-4 sm:px-6 py-2 sm:py-3">
-              For Business
+              login
             </Button>
           </Link>
           <Sheet>
